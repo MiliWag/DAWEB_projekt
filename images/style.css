@@ -1,0 +1,19 @@
+/*---------------- main css --------------------*/
+html {
+  box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #513634;
+}
+
+button {
+  cursor: pointer;
+}
