@@ -7,3 +7,174 @@ html {
 ::before {
   box-sizing: inherit;
 }
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #513634;
+}
+
+main {
+  max-width: 300px;
+  padding: 1rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ----------------- mili.html ----------------*/
+
+.block {
+  background-color: #e6e5e1;
+  margin: 0 auto 1rem auto;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.block-text {
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin: 2rem 0rem 6rem 0rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.buttons__primary {
+  background-color: #08219e;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: solid 3px white;
+  border-radius: 15px;
+  width: 12rem;
+}
+
+.buttons__primary:hover,
+:focus {
+  background-color: white;
+  color: #08219e;
+  border-color: #08219e;
+}
+
+.buttons__secondary {
+  color: #08219e;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: solid 3px #08219e;
+  border-radius: 15px;
+  width: 12rem;
+}
+
+.buttons__secondary:hover,
+:focus {
+  background-color: white;
+}
+
+/*---------------- rules --------------*/
+
+.rules .buttons {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.rules .buttons__primary {
+  max-width: 50%;
+}
+
+.rules .buttons__secondary {
+  max-width: 40%;
+  margin-bottom: 0;
+  color: #e6e5e1;
+  border-color: #e6e5e1;
+  text-transform: none;
+}
+
+.rules .buttons__secondary:hover,
+:focus {
+  background-color: #e6e5e1;
+  color: #513634;
+  border-color: #513634;
+}
+
+/*--------------- game ---------------------*/
+
+.board {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.score-board {
+  background-color: #e6e5e1;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  width: 60%;
+}
+
+.score-board p {
+  text-transform: uppercase;
+  margin: 0 0 0.5rem 0;
+}
+
+.players {
+  display: flex;
+  justify-content: space-between;
+}
+
+.difficulty-selection {
+  text-transform: uppercase;
+  text-align: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  box-shadow: 5px 10px 15px black;
+}
+
+.info-rules {
+  background: none;
+  border: none;
+  color: #e6e5e1;
+  font-size: 3rem;
+  letter-spacing: -0.5rem;
+  padding: 0;
+}
+
+.game .block {
+  padding-top: 1rem;
+}
+
+.block__start,
+.block__end {
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1rem;
+  padding: 1.2rem 0.5rem 1rem 0.5rem;
+  background-color: #24bae1;
+  color: white;
+  border-radius: 50px;
+  border: solid 2px #513634;
+}
+
+.block__field {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50px;
+  border: solid 2px black;
+  margin: 0.5rem;
+}
