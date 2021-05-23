@@ -12,27 +12,31 @@
     <main class="game">
       <header class="board">
         <div class="score-board">
-          <p>Hraje:</p>
+          <div class="who-plays">
+            <p class="who-plays__text">Hraje:</p>
+            <div class="who-plays__color"></div>
+          </div>
+
           <div class="players">
             <div class="player">
-              <div class="player__color">Č</div>
+              <div class="player__color player__color--red"></div>
               <div class="player__score">0</div>
             </div>
             <div class="player">
-              <div class="player__color">M</div>
+              <div class="player__color player__color--blue"></div>
               <div class="player__score">50</div>
             </div>
             <div class="player">
-              <div class="player__color">Ž</div>
+              <div class="player__color player__color--yellow"></div>
               <div class="player__score">100</div>
             </div>
             <div class="player">
-              <div class="player__color">Z</div>
+              <div class="player__color player__color--green"></div>
               <div class="player__score">20</div>
             </div>
           </div>
         </div>
-        <button class="difficulty-selection">Hraj</button>
+        <button class="difficulty-choice">Hraj</button>
         <button class="info-rules">?</button>
       </header>
 
@@ -40,6 +44,81 @@
         <div class="block__start">Start</div>
         <button class="block__field"></button>
         <button class="block__end">Cíl</button>
+      </div>
+
+      <div class="popup-window">
+        <div class="popup-window__background"></div>
+        <div class="popup-window__front">
+          <!--label class="number-of-players" for="number-of-players"
+            >Zvolte počet hráčů:</label
+          >
+
+          <select class="number-of-players-select" name="number-of-players">
+            <option value="one">1</option>
+            <option value="two">2</option>
+            <option value="three">3</option>
+            <option value="four">4</option>
+          </select>
+
+          <a class="buttons__primary" href="#">Další</a!-->
+          <div class="player-card">
+            <span class="player-number">Hráč č. 1</span>
+
+            <label for="input_for_name">
+              Jméno:
+              <input
+                class="input-for-name"
+                id="input_for_name"
+                type="text"
+                name="name"
+              />
+            </label>
+            <span class="choose-color">Zvolte barvu hráče:</span>
+            <div class="player-color">
+              <label for="player_color">
+                <input
+                  class="player-color-yellow"
+                  id="player_color"
+                  type="radio"
+                  name="player_color"
+                  value="yellow"
+                />
+              </label>
+              <label for="player_color">
+                <input
+                  class="player-color-red"
+                  id="player_color"
+                  type="radio"
+                  name="player_color"
+                  value="red"
+                />
+              </label>
+              <label for="player_color">
+                <input
+                  class="player-color-blue"
+                  id="player_color"
+                  type="radio"
+                  name="player_color"
+                  value="blue"
+                />
+              </label>
+              <label for="player_color">
+                <input
+                  class="player-color-green"
+                  id="player_color"
+                  type="radio"
+                  name="player_color"
+                  value="green"
+                />
+              </label>
+            </div>
+
+            <div class="buttons">
+              <a class="buttons__secondary" href="#">Zpět</a>
+              <a class="buttons__primary" href="#">Další</a>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </body>
