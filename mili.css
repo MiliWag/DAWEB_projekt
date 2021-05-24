@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   background-color: #513634;
 }
 
@@ -54,16 +54,14 @@ button {
   text-align: center;
   font-size: 1.5rem;
   padding: 1rem;
-  border: solid 3px white;
+  border: solid 3px #08219e;
   border-radius: 15px;
   width: 12rem;
 }
 
-.buttons__primary:hover,
-:focus {
-  background-color: white;
-  color: #08219e;
-  border-color: #08219e;
+.buttons__primary:hover {
+  background-color: #405ff8;
+  border-color: #405ff8;
 }
 
 .buttons__secondary {
@@ -79,9 +77,13 @@ button {
   width: 12rem;
 }
 
-.buttons__secondary:hover,
-:focus {
+.buttons__secondary:hover {
   background-color: white;
+}
+
+.homepage .buttons__secondary {
+  width: 12rem;
+  margin-bottom: 1rem;
 }
 
 /*---------------- rules --------------*/
@@ -104,8 +106,7 @@ button {
   text-transform: none;
 }
 
-.rules .buttons__secondary:hover,
-:focus {
+.rules .buttons__secondary:hover {
   background-color: #e6e5e1;
   color: #513634;
   border-color: #513634;
@@ -125,7 +126,7 @@ button {
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
-  width: 60%;
+  width: 55%;
 }
 
 .who-plays {
@@ -202,7 +203,6 @@ button {
   border: none;
   color: #e6e5e1;
   font-size: 3rem;
-  letter-spacing: -0.5rem;
   padding: 0;
 }
 
@@ -232,11 +232,11 @@ button {
 
 /* -------------------------- popup window ------------------------*/
 
-/*.popup-window {
+.popup-window {
   display: none;
-}*/
+}
 
-.popup-window__background {
+.popup-window-background {
   position: absolute;
   left: 0;
   top: 0;
@@ -247,7 +247,7 @@ button {
   opacity: 0.4;
 }
 
-.popup-window__front {
+.popup-window-front {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -302,6 +302,8 @@ button {
 
 .player-number {
   margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  font-weight: bold;
 }
 
 .input-for-name {
@@ -343,4 +345,183 @@ button {
 
 .player-color-green {
   background-color: green;
+}
+
+.player-card > .buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.player-card .buttons__primary {
+  width: 8rem;
+}
+
+.player-card .buttons__secondary {
+  width: 6rem;
+}
+
+.player-card .buttons__secondary:hover {
+  color: white;
+  background-color: #405ff8;
+  border-color: #405ff8;
+}
+
+/* ------------------ rules card ---------------------*/
+
+.rules-card {
+  text-align: center;
+}
+
+/* ------------------- difficulty --------------------*/
+
+.difficulty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #0b0b73;
+}
+
+.difficulty h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.difficulty span {
+  margin-bottom: 2rem;
+}
+
+.difficulty-input {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.difficulty-input__item {
+  width: 2rem;
+  height: 2rem;
+  border: solid 3px #0b0b73;
+  border-radius: 50px;
+  appearance: none;
+}
+
+.difficulty-button {
+  width: 10rem;
+  margin-bottom: 2rem;
+  background-color: #08219e;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.difficulty-button:hover {
+  background-color: #405ff8;
+  color: white;
+}
+
+/* ------------------ translate card ----------------- */
+
+.translate-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #0b0b73;
+}
+
+.translate-card__word {
+  margin: 1rem 0rem 2rem 0rem;
+  font-size: 2.5rem;
+}
+
+.translate-card__translation {
+  width: 13.5rem;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+  text-align: center;
+  font-style: italic;
+  border: solid 3px #0b0b73;
+}
+
+/*.translate-card__translation:focus {
+  background-color: rgb(207, 238, 248);
+  color: black;
+  border: solid 3px #0b0b73;
+}*/
+
+.translate-card__button {
+  width: 10rem;
+  margin-bottom: 2rem;
+  background-color: #08219e;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.translate-card__button:hover {
+  background-color: #405ff8;
+  color: white;
+}
+
+/* ---------------------- right/wrong answer ----------------------*/
+
+.popup-window-front--right {
+  background-color: lightgreen;
+}
+
+.popup-window-front--wrong {
+  background-color: rgb(250, 168, 168);
+}
+
+.right-answer,
+.wrong-answer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.right-answer__text,
+.wrong-answer__text {
+  font-size: 2.5rem;
+}
+
+.right-answer__score,
+.wrong-answer__score {
+  font-size: 1.4rem;
+  font-style: italic;
+}
+
+.wrong-answer__isright {
+  margin-bottom: 2rem;
+}
+
+.right-answer__button,
+.wrong-answer__button {
+  margin-bottom: 2rem;
+  background-color: #08219e;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.right-answer__button:hover,
+.wrong-answer__button:hover {
+  background-color: #405ff8;
+  color: white;
+}
+
+.wrong-answer__button-secondary {
+  font-size: 1.2rem;
+  color: #08219e;
+}
+
+.wrong-answer__button-secondary:hover {
+  color: #405ff8;
 }

@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="mili.css" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;1,400&display=swap"
+      rel="stylesheet"
+    />
     <title>Hra</title>
   </head>
   <body>
@@ -47,9 +52,9 @@
       </div>
 
       <div class="popup-window">
-        <div class="popup-window__background"></div>
-        <div class="popup-window__front">
-          <!--label class="number-of-players" for="number-of-players"
+        <div class="popup-window-background"></div>
+        <div class="popup-window-front">
+          <!--výběr počtu hráčů label class="number-of-players" for="number-of-players"
             >Zvolte počet hráčů:</label
           >
 
@@ -61,7 +66,8 @@
           </select>
 
           <a class="buttons__primary" href="#">Další</a!-->
-          <div class="player-card">
+
+          <!-- karta hráče div class="player-card">
             <span class="player-number">Hráč č. 1</span>
 
             <label for="input_for_name">
@@ -117,7 +123,85 @@
               <a class="buttons__secondary" href="#">Zpět</a>
               <a class="buttons__primary" href="#">Další</a>
             </div>
-          </div>
+          </div!-->
+
+          <!-- pravidla div class="rules-card">
+            <h2 class="rules-card__header">Pravidla</h2>
+            <p class="rules-card__text">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae,
+              ducimus modi aspernatur quasi repudiandae necessitatibus quidem ad
+              deserunt, atque sequi unde amet, voluptate corporis quae tempora
+              consectetur explicabo exercitationem nam.
+            </p>
+          </div!-->
+
+          <!-- zvol si obtížnost div class="difficulty">
+            <h3>Zvol si obtížnost</h3>
+            <span>(1 = nejlehčí, 3 = nejtěžší)</span>
+            <div class="difficulty-input">
+              <label for="difficulty">
+                <input
+                class="difficulty-input__item"
+                  id="difficulty"
+                  type="radio"
+                  name="difficulty"
+                  value="one"
+                />1
+              </label>
+              <label for="difficulty">
+                <input
+                class="difficulty-input__item"
+                  id="difficulty"
+                  type="radio"
+                  name="difficulty"
+                  value="one"
+                />2
+              </label>
+              <label for="difficulty">
+                <input
+                class="difficulty-input__item"
+                  id="difficulty"
+                  type="radio"
+                  name="difficulty"
+                  value="one"
+                />3
+              </label>
+            </div>
+            <a class="difficulty-button" href="#">Hraj</a>
+          </div!-->
+
+          <!-- karta pro překlad div class="translate-card">
+            <span class="translate-card__word">přelož</span>
+            <input
+              class="translate-card__translation"
+              type="text"
+              id="translation"
+              name="translation"
+            />
+            <a class="translate-card__button" href="#">Zkontroluj</a>
+          </div!-->
+
+          <!-- správná odpověď div class="right-answer">
+            <span class="right-answer__text">Správně!</span>
+            <p class="right-answer__score">Připisuješ si x bodů</p>
+            <a class="right-answer__button" href="#">Zpět do hry</a>
+          </div!-->
+
+          <!-- špatná odpověď div class="wrong-answer">
+            <span class="wrong-answer__text">Špatně</span>
+            <p class="wrong-answer__score">Připisuješ si 0 bodů</p>
+            <p class="wrong-answer__isright">Správná odpověď je překlad</p>
+            <a class="wrong-answer__button" href="#">Zpět do hry</a>
+            <a class="wrong-answer__button-secondary" href="#">Uznat odpověď</a>
+          </div!-->
+
+          <!-- přehled skóre div class="score-overview">
+            <span>Přehled skóre</span>
+          </div!-->
+
+          <!-- konec hry div class="game-over">
+            <span>Konec hry</span>
+          </div!-->
         </div>
       </div>
     </main>
