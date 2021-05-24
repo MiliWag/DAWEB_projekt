@@ -7,8 +7,9 @@
     <link rel="stylesheet" type="text/css" href="mili.css" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;600&family=Quicksand:wght@300;500&display=swap"
       rel="stylesheet"
     />
     <title>Hra</title>
@@ -41,8 +42,10 @@
             </div>
           </div>
         </div>
-        <button class="difficulty-choice">Hraj</button>
-        <button class="info-rules">?</button>
+        <div class="play-area">
+          <button class="difficulty-choice">hraj!</button>
+          <button class="info-rules">pravidla</button>
+        </div>
       </header>
 
       <div class="block">
@@ -125,7 +128,7 @@
             </div>
           </div!-->
 
-          <!-- pravidla div class="rules-card">
+          <!--pravidla hrydiv class="rules-card">
             <h2 class="rules-card__header">Pravidla</h2>
             <p class="rules-card__text">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae,
@@ -135,13 +138,13 @@
             </p>
           </div!-->
 
-          <!-- zvol si obtížnost div class="difficulty">
+          <!--div class="difficulty">
             <h3>Zvol si obtížnost</h3>
             <span>(1 = nejlehčí, 3 = nejtěžší)</span>
             <div class="difficulty-input">
               <label for="difficulty">
                 <input
-                class="difficulty-input__item"
+                  class="difficulty-input__item"
                   id="difficulty"
                   type="radio"
                   name="difficulty"
@@ -150,7 +153,7 @@
               </label>
               <label for="difficulty">
                 <input
-                class="difficulty-input__item"
+                  class="difficulty-input__item"
                   id="difficulty"
                   type="radio"
                   name="difficulty"
@@ -159,7 +162,7 @@
               </label>
               <label for="difficulty">
                 <input
-                class="difficulty-input__item"
+                  class="difficulty-input__item"
                   id="difficulty"
                   type="radio"
                   name="difficulty"
@@ -170,8 +173,11 @@
             <a class="difficulty-button" href="#">Hraj</a>
           </div!-->
 
-          <!-- karta pro překlad div class="translate-card">
-            <span class="translate-card__word">přelož</span>
+          <!--karta s překladem div class="translate-card">
+            <span class="translate-card__word"
+              >stánek s rychlým občerstvením</span
+            >
+            <span class="translate-card__text">Napiš překlad:</span>
             <input
               class="translate-card__translation"
               type="text"
@@ -182,26 +188,91 @@
           </div!-->
 
           <!-- správná odpověď div class="right-answer">
+            <img
+              src="images/yes_icon.jpg"
+              alt="yes_icon"
+              class="right-answer__image"
+            />
             <span class="right-answer__text">Správně!</span>
             <p class="right-answer__score">Připisuješ si x bodů</p>
             <a class="right-answer__button" href="#">Zpět do hry</a>
           </div!-->
 
           <!-- špatná odpověď div class="wrong-answer">
-            <span class="wrong-answer__text">Špatně</span>
+            <img
+              src="images/no_icon.jpg"
+              alt="no_icon"
+              class="wrong-answer__image"
+            />
+            <span class="wrong-answer__text">Špatně!</span>
             <p class="wrong-answer__score">Připisuješ si 0 bodů</p>
-            <p class="wrong-answer__isright">Správná odpověď je překlad</p>
+            <p class="wrong-answer__isright">
+              Správná odpověď je:<br />
+              fast food stand
+            </p>
             <a class="wrong-answer__button" href="#">Zpět do hry</a>
-            <a class="wrong-answer__button-secondary" href="#">Uznat odpověď</a>
+            <a class="wrong-answer__button-secondary" href="#"
+              >Přesto uznat odpověď</a
+            >
           </div!-->
 
-          <!-- přehled skóre div class="score-overview">
-            <span>Přehled skóre</span>
+          <!--div class="score-overview">
+            <h2>Přehled skóre:</h2>
+            <div class="score-overview-players">
+              <div class="player">
+                <div class="player__color player__color--red"></div>
+                <div class="player__score">60 bodů</div>
+                <div class="player__name">Jindřiška</div>
+              </div>
+              <div class="player">
+                <div class="player__color player__color--blue"></div>
+                <div class="player__score">3 bodů</div>
+                <div class="player__name">Milča</div>
+              </div>
+              <div class="player">
+                <div class="player__color player__color--yellow"></div>
+                <div class="player__score">50 bodů</div>
+                <div class="player__name">Patrik</div>
+              </div>
+              <div class="player">
+                <div class="player__color player__color--green"></div>
+                <div class="player__score">10 bodů</div>
+                <div class="player__name">Honza</div>
+              </div>
+            </div>
           </div!-->
 
-          <!-- konec hry div class="game-over">
-            <span>Konec hry</span>
-          </div!-->
+          <konec hry div class="game-over">
+            <h2>Konec hry</h2>
+            <img src="images/celebration.jpg" alt="celebration" class="winner-img">
+            <p class="winner">Vítěz je Jindřiška!</p>
+
+            <div class="score-overview-players">
+              <div class="player">
+                <div class="player__color player__color--red"></div>
+                <div class="player__score">60 bodů</div>
+                <div class="player__name">Jindřiška</div>
+              </div>
+              <div class="player">
+                <div class="player__color player__color--blue"></div>
+                <div class="player__score">3 bodů</div>
+                <div class="player__name">Milča</div>
+              </div>
+              <div class="player">
+                <div class="player__color player__color--yellow"></div>
+                <div class="player__score">50 bodů</div>
+                <div class="player__name">Patrik</div>
+              </div>
+              <div class="player">
+                <div class="player__color player__color--green"></div>
+                <div class="player__score">10 bodů</div>
+                <div class="player__name">Honza</div>
+              </div>
+            </div>
+            <div class="game-over-btn">
+            <a class="game-over-btn__primary" href="miliGame.html">Hrát znovu</a>
+            <a class="game-over-btn__secondary" href="#">Zpět</a></div>
+          </div>
         </div>
       </div>
     </main>

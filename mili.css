@@ -8,9 +8,25 @@ html {
   box-sizing: inherit;
 }
 
+/*COLORS
+brown - #544B3D;
+darkblue - #24374B;
+lightblue - #6698BF;
+red - #90131B;
+beige - #f5ebe0;
+almond - #EBD8C2;
+green - #5F8731;
+blue for player - #10497F;
+yellow - #F7E135; */
+
+/*FONTS
+font-family: 'Comfortaa', cursive;
+font-family: 'Quicksand', sans-serif;*/
+
 body {
-  font-family: 'Source Sans Pro', sans-serif;
-  background-color: #513634;
+  background-color: #544b3d;
+  background-image: url('images/background_mobile02.jpg');
+  background-size: 100%;
 }
 
 main {
@@ -24,18 +40,26 @@ button {
 
 /* ----------------- mili.html ----------------*/
 
+.homepage {
+  font-family: 'Quicksand', sans-serif;
+}
+
 .block {
-  background-color: #e6e5e1;
+  background-color: #f5ebe0;
   margin: 0 auto 1rem auto;
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
   text-align: center;
+  border-radius: 5px;
+  box-shadow: 5px 10px 15px black;
 }
 
 .block-text {
+  color: #10497f;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
   margin: 2rem 0rem 6rem 0rem;
 }
 
@@ -47,32 +71,33 @@ button {
 }
 
 .buttons__primary {
-  background-color: #08219e;
+  background-color: #10497f;
   color: white;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
+  font-weight: bold;
   font-size: 1.5rem;
   padding: 1rem;
-  border: solid 3px #08219e;
+  border: solid 3px #10497f;
   border-radius: 15px;
   width: 12rem;
 }
 
 .buttons__primary:hover {
-  background-color: #405ff8;
-  border-color: #405ff8;
+  background-color: #1669b6;
+  border-color: #1669b6;
 }
 
 .buttons__secondary {
-  color: #08219e;
+  color: #10497f;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
   font-size: 1.5rem;
   margin-bottom: 1rem;
   padding: 1rem;
-  border: solid 3px #08219e;
+  border: solid 3px #10497f;
   border-radius: 15px;
   width: 12rem;
 }
@@ -88,6 +113,11 @@ button {
 
 /*---------------- rules --------------*/
 
+.rules {
+  font-family: 'Quicksand', sans-serif;
+  color: #10497f;
+}
+
 .rules .buttons {
   flex-direction: row;
   flex-wrap: wrap;
@@ -96,6 +126,7 @@ button {
 
 .rules .buttons__primary {
   max-width: 50%;
+  border-color: white;
 }
 
 .rules .buttons__secondary {
@@ -108,11 +139,15 @@ button {
 
 .rules .buttons__secondary:hover {
   background-color: #e6e5e1;
-  color: #513634;
-  border-color: #513634;
+  color: #544b3d;
+  border-color: #544b3d;
 }
 
 /*--------------- game ---------------------*/
+
+.game {
+  font-family: 'Quicksand', sans-serif;
+}
 
 .board {
   display: flex;
@@ -122,11 +157,13 @@ button {
 }
 
 .score-board {
-  background-color: #e6e5e1;
+  background-color: #f5ebe0;
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
   width: 55%;
+  border-radius: 5px;
+  box-shadow: 5px 10px 15px black;
 }
 
 .who-plays {
@@ -143,8 +180,8 @@ button {
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 50px;
-  border: solid 3px black;
-  background-color: red;
+  background-color: #90131b;
+  box-shadow: 5px 5px 5px #988971;
 }
 
 .players {
@@ -165,44 +202,51 @@ button {
 }
 
 .player__color--red {
-  background-color: red;
+  background-color: #90131b;
 }
 
 .player__color--blue {
-  background-color: blue;
+  background-color: #10497f;
 }
 
 .player__color--yellow {
-  background-color: yellow;
+  background-color: #f7e135;
 }
 
 .player__color--green {
-  background-color: green;
+  background-color: #5f8731;
+}
+
+.play-area {
+  display: flex;
+  flex-direction: column;
 }
 
 .difficulty-choice {
+  margin-bottom: 0.8rem;
+  padding: 1rem 1.2rem 1rem 1.2rem;
   text-transform: uppercase;
   text-align: center;
   font-weight: 600;
   font-size: 1.2rem;
-  width: 4.5rem;
-  height: 4.5rem;
-  background-color: #f4f5b9;
-  border: solid 1px black;
+  color: #f5ebe0;
+  background-color: #10497f;
+  border: solid 3px #f5ebe0;
   border-radius: 5px;
   box-shadow: 5px 10px 15px black;
 }
 
 .difficulty-choice:hover {
-  background-color: black;
-  color: #f4f5b9;
+  background-color: #f5ebe0;
+  color: #10497f;
 }
 
 .info-rules {
   background: none;
   border: none;
   color: #e6e5e1;
-  font-size: 3rem;
+  text-transform: uppercase;
+  font-size: 1rem;
   padding: 0;
 }
 
@@ -216,17 +260,17 @@ button {
   height: 4rem;
   margin-bottom: 1rem;
   padding: 1.2rem 0.5rem 1rem 0.5rem;
-  background-color: #24bae1;
+  background-color: #10497f;
   color: white;
   border-radius: 50px;
-  border: solid 2px #513634;
+  border: solid 2px #10497f;
 }
 
 .block__field {
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50px;
-  border: solid 2px black;
+  border: solid 2px #544b3d;
   margin: 0.5rem;
 }
 
@@ -266,15 +310,16 @@ button {
 .number-of-players {
   margin: 1rem 0;
   font-size: 1.4rem;
-  color: #08219e;
+  color: #10497f;
 }
 
 .number-of-players-select {
+  font-family: 'Quicksand', sans-serif;
   margin-bottom: 5rem;
   width: 3rem;
   font-size: 1.5rem;
   text-align: center;
-  border: solid 2px #08219e;
+  border: solid 2px #10497f;
   border-radius: 2px;
 }
 
@@ -283,7 +328,7 @@ button {
   width: 7rem;
   margin: 0 0.5rem 0 0.5rem;
   text-transform: none;
-  border-color: #08219e;
+  border-color: #10497f;
 }
 
 .popup-window__front .buttons {
@@ -297,7 +342,7 @@ button {
   flex-direction: column;
   align-items: center;
   font-size: 1.4rem;
-  color: #08219e;
+  color: #10497f;
 }
 
 .player-number {
@@ -307,11 +352,10 @@ button {
 }
 
 .input-for-name {
+  color: #2f2a22;
   font-size: 1.4rem;
-  font-style: italic;
-  font-weight: 600;
   width: 8.5rem;
-  border: solid 3px #08219e;
+  border: solid 3px #10497f;
 }
 
 .choose-color {
@@ -328,23 +372,23 @@ button {
 }
 
 .player-color input:checked {
-  border: solid 4px black;
+  border: solid 4px #2f2a22;
 }
 
 .player-color-yellow {
-  background-color: yellow;
+  background-color: #f7e135;
 }
 
 .player-color-red {
-  background-color: red;
+  background-color: #90131b;
 }
 
 .player-color-blue {
-  background-color: blue;
+  background-color: #10497f;
 }
 
 .player-color-green {
-  background-color: green;
+  background-color: #5f8731;
 }
 
 .player-card > .buttons {
@@ -362,13 +406,14 @@ button {
 
 .player-card .buttons__secondary:hover {
   color: white;
-  background-color: #405ff8;
-  border-color: #405ff8;
+  background-color: #1669b6;
+  border-color: #1669b6;
 }
 
 /* ------------------ rules card ---------------------*/
 
 .rules-card {
+  color: #10497f;
   text-align: center;
 }
 
@@ -403,10 +448,14 @@ button {
   appearance: none;
 }
 
+.difficulty-input__item:checked {
+  background-color: #1669b6;
+}
+
 .difficulty-button {
   width: 10rem;
   margin-bottom: 2rem;
-  background-color: #08219e;
+  background-color: #10497f;
   color: white;
   text-decoration: none;
   text-align: center;
@@ -416,7 +465,7 @@ button {
 }
 
 .difficulty-button:hover {
-  background-color: #405ff8;
+  background-color: #1669b6;
   color: white;
 }
 
@@ -426,33 +475,32 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #0b0b73;
+  color: #10497f;
 }
 
 .translate-card__word {
+  text-align: center;
   margin: 1rem 0rem 2rem 0rem;
-  font-size: 2.5rem;
+  font-size: 1.8rem;
+}
+
+.translate-card__text {
+  margin-bottom: 0.5rem;
 }
 
 .translate-card__translation {
+  color: #544b3d;
   width: 13.5rem;
   margin-bottom: 2.5rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-align: center;
-  font-style: italic;
-  border: solid 3px #0b0b73;
+  border: solid 3px #10497f;
 }
-
-/*.translate-card__translation:focus {
-  background-color: rgb(207, 238, 248);
-  color: black;
-  border: solid 3px #0b0b73;
-}*/
 
 .translate-card__button {
   width: 10rem;
   margin-bottom: 2rem;
-  background-color: #08219e;
+  background-color: #10497f;
   color: white;
   text-decoration: none;
   text-align: center;
@@ -462,26 +510,25 @@ button {
 }
 
 .translate-card__button:hover {
-  background-color: #405ff8;
+  background-color: #1669b6;
   color: white;
 }
 
 /* ---------------------- right/wrong answer ----------------------*/
 
-.popup-window-front--right {
-  background-color: lightgreen;
-}
-
-.popup-window-front--wrong {
-  background-color: rgb(250, 168, 168);
-}
-
 .right-answer,
 .wrong-answer {
+  color: #10497f;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1.5rem 0 2rem 0;
+  text-align: center;
+}
+
+.right-answer__image,
+.wrong-answer__image {
+  width: 4rem;
+  height: 4rem;
 }
 
 .right-answer__text,
@@ -492,7 +539,6 @@ button {
 .right-answer__score,
 .wrong-answer__score {
   font-size: 1.4rem;
-  font-style: italic;
 }
 
 .wrong-answer__isright {
@@ -502,7 +548,7 @@ button {
 .right-answer__button,
 .wrong-answer__button {
   margin-bottom: 2rem;
-  background-color: #08219e;
+  background-color: #10497f;
   color: white;
   text-decoration: none;
   text-align: center;
@@ -513,15 +559,101 @@ button {
 
 .right-answer__button:hover,
 .wrong-answer__button:hover {
-  background-color: #405ff8;
+  background-color: #1669b6;
   color: white;
 }
 
 .wrong-answer__button-secondary {
-  font-size: 1.2rem;
-  color: #08219e;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #10497f;
 }
 
 .wrong-answer__button-secondary:hover {
-  color: #405ff8;
+  color: #1669b6;
+}
+
+/*------------------- score-overview ------------------*/
+
+.score-overview {
+  color: #2f2a22;
+  text-align: center;
+}
+
+.score-overview-players {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.score-overview .player,
+.game-over .player {
+  display: flex;
+  flex-direction: row;
+}
+
+.score-overview .player__score,
+.game-over .player__score {
+  margin: 0.5rem;
+  width: 5rem;
+}
+
+/*------------------ game-over -------------------*/
+
+.game-over {
+  text-align: center;
+  color: #2f2a22;
+}
+
+.winner-img {
+  width: 4rem;
+}
+
+.winner {
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+.game-over-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-over-btn__primary {
+  background-color: #10497f;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+.game-over .player:last-child {
+  margin-bottom: 1rem;
+}
+
+.game-over-btn__primary:hover {
+  background-color: #1669b6;
+  color: white;
+}
+
+.game-over-btn__secondary {
+  color: #10497f;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: solid 3px #10497f;
+  border-radius: 15px;
+  width: 50%;
+}
+
+.game-over-btn__secondary:hover {
+  background-color: #1669b6;
+  color: white;
+  border-color: #1669b6;
 }
