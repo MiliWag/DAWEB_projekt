@@ -8,20 +8,18 @@ html {
   box-sizing: inherit;
 }
 
-/*COLORS
+/* ----------------------------------------COLORS----------------------------------------
 brown - #544B3D;
-darkblue - #24374B;
 lightblue - #6698BF;
 red - #90131B;
 beige - #f5ebe0;
 almond - #EBD8C2;
 green - #5F8731;
-blue for player - #10497F;
+blue - #10497F;
 yellow - #F7E135; */
 
-/*FONTS
-font-family: 'Comfortaa', cursive;
-font-family: 'Quicksand', sans-serif;*/
+/* ---------------------------------------FONTS----------------------------------------
+font-family: 'Quicksand', sans-serif; */
 
 body {
   background-color: #544b3d;
@@ -38,7 +36,7 @@ button {
   cursor: pointer;
 }
 
-/* ----------------- mili.html ----------------*/
+/* ---------------------------------------- index.html ----------------------------------*/
 
 .homepage {
   font-family: 'Quicksand', sans-serif;
@@ -50,9 +48,15 @@ button {
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: center;
   border-radius: 5px;
   box-shadow: 5px 10px 15px black;
+}
+
+.homepage-logo {
+  width: 10rem;
+  margin: 2rem 0 2rem 0;
 }
 
 .block-text {
@@ -60,90 +64,80 @@ button {
   font-weight: 400;
   font-size: 1.6rem;
   font-weight: bold;
-  margin: 2rem 0rem 6rem 0rem;
+  margin: 0 0 3rem 0;
 }
 
-.buttons {
+.homepage-buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 2rem;
 }
 
-.buttons__primary {
-  background-color: #10497f;
-  color: white;
+.button {
+  width: 12rem;
+  padding: 1rem;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
-  font-weight: bold;
   font-size: 1.5rem;
-  padding: 1rem;
   border: solid 3px #10497f;
   border-radius: 15px;
-  width: 12rem;
 }
 
-.buttons__primary:hover {
+.button--primary {
+  background-color: #10497f;
+  color: white;
+  font-weight: bold;
+}
+
+.button--primary:hover {
   background-color: #1669b6;
   border-color: #1669b6;
 }
 
-.buttons__secondary {
+.button--secondary {
+  text-transform: none;
   color: #10497f;
-  text-transform: uppercase;
-  text-decoration: none;
-  text-align: center;
-  font-size: 1.5rem;
   margin-bottom: 1rem;
-  padding: 1rem;
-  border: solid 3px #10497f;
-  border-radius: 15px;
-  width: 12rem;
 }
 
-.buttons__secondary:hover {
+.button--secondary:hover {
   background-color: white;
 }
 
-.homepage .buttons__secondary {
-  width: 12rem;
-  margin-bottom: 1rem;
-}
-
-/*---------------- rules --------------*/
+/*-------------------------------------------------- rules ----------------------------------------------*/
 
 .rules {
   font-family: 'Quicksand', sans-serif;
   color: #10497f;
 }
 
-.rules .buttons {
+.rules-buttons {
+  display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.rules .buttons__primary {
-  max-width: 50%;
-  border-color: white;
-}
-
-.rules .buttons__secondary {
+.button--tertiary {
   max-width: 40%;
-  margin-bottom: 0;
+  margin-right: 1rem;
   color: #e6e5e1;
   border-color: #e6e5e1;
   text-transform: none;
 }
 
-.rules .buttons__secondary:hover {
+.button--tertiary:hover {
   background-color: #e6e5e1;
   color: #544b3d;
   border-color: #544b3d;
 }
 
-/*--------------- game ---------------------*/
+.button--primary--border {
+  border-color: white;
+}
+
+/*-------------------------------------------------- game --------------------------------------------------*/
 
 .game {
   font-family: 'Quicksand', sans-serif;
@@ -201,19 +195,19 @@ button {
   border-radius: 50px;
 }
 
-.player__color--red {
+.player__color--one {
   background-color: #90131b;
 }
 
-.player__color--blue {
+.player__color--two {
   background-color: #10497f;
 }
 
-.player__color--yellow {
+.player__color--three {
   background-color: #f7e135;
 }
 
-.player__color--green {
+.player__color--four {
   background-color: #5f8731;
 }
 
@@ -250,7 +244,12 @@ button {
   padding: 0;
 }
 
-.game .block {
+.info-rules:hover {
+  color: #ebd8c2;
+}
+
+.block--game {
+  align-items: flex-start;
   padding-top: 1rem;
 }
 
@@ -274,10 +273,17 @@ button {
   margin: 0.5rem;
 }
 
-/* -------------------------- popup window ------------------------*/
+/* ----------------------------------------------- popup window --------------------------------------------*/
 
 .popup-window {
-  display: none;
+  /*  display: none; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .popup-window-background {
@@ -305,7 +311,7 @@ button {
   box-shadow: 5px 10px 15px black;
 }
 
-/*-------------------- number of players ----------------------*/
+/*------------------------------------------------ number of players ------------------------------------------*/
 
 .number-of-players {
   margin: 1rem 0;
@@ -323,19 +329,13 @@ button {
   border-radius: 2px;
 }
 
-.popup-window__front .buttons__primary,
-.buttons__secondary {
-  width: 7rem;
-  margin: 0 0.5rem 0 0.5rem;
+.button--primary--small {
+  width: 8rem;
   text-transform: none;
-  border-color: #10497f;
+  margin-bottom: 1rem;
 }
 
-.popup-window__front .buttons {
-  flex-direction: row;
-}
-
-/* ------------------- player card -------------------*/
+/* --------------------------------------------------- player card --------------------------------------------*/
 
 .player-card {
   display: flex;
@@ -391,39 +391,37 @@ button {
   background-color: #5f8731;
 }
 
-.player-card > .buttons {
+.player-card-buttons {
   display: flex;
   flex-direction: row;
 }
 
-.player-card .buttons__primary {
-  width: 8rem;
-}
-
-.player-card .buttons__secondary {
+.button--secondary--small {
   width: 6rem;
+  margin-right: 0.5rem;
 }
 
-.player-card .buttons__secondary:hover {
+.button--secondary--small:hover {
   color: white;
   background-color: #1669b6;
   border-color: #1669b6;
 }
 
-/* ------------------ rules card ---------------------*/
+/* ---------------------------------------------- rules card ------------------------------------------------*/
 
 .rules-card {
   color: #10497f;
   text-align: center;
 }
 
-/* ------------------- difficulty --------------------*/
+/* -------------------------------------------------- difficulty ----------------------------------------------*/
 
 .difficulty {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #0b0b73;
+  margin-bottom: 1rem;
 }
 
 .difficulty h3 {
@@ -436,46 +434,37 @@ button {
 }
 
 .difficulty-input {
-  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
+}
+
+.difficulty-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 .difficulty-input__item {
   width: 2rem;
   height: 2rem;
-  border: solid 3px #0b0b73;
-  border-radius: 50px;
-  appearance: none;
+  margin-right: 0.5rem;
 }
 
-.difficulty-input__item:checked {
-  background-color: #1669b6;
-}
-
-.difficulty-button {
+.button--primary--medium {
   width: 10rem;
-  margin-bottom: 2rem;
-  background-color: #10497f;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  font-size: 1.5rem;
-  padding: 1rem;
-  border-radius: 15px;
+  text-transform: none;
 }
 
-.difficulty-button:hover {
-  background-color: #1669b6;
-  color: white;
-}
-
-/* ------------------ translate card ----------------- */
+/* ------------------------------------------- translate card ---------------------------------------------- */
 
 .translate-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #10497f;
+  margin-bottom: 1rem;
 }
 
 .translate-card__word {
@@ -497,24 +486,7 @@ button {
   border: solid 3px #10497f;
 }
 
-.translate-card__button {
-  width: 10rem;
-  margin-bottom: 2rem;
-  background-color: #10497f;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  font-size: 1.5rem;
-  padding: 1rem;
-  border-radius: 15px;
-}
-
-.translate-card__button:hover {
-  background-color: #1669b6;
-  color: white;
-}
-
-/* ---------------------- right/wrong answer ----------------------*/
+/* ------------------------------------------ right/wrong answer ------------------------------------------*/
 
 .right-answer,
 .wrong-answer {
@@ -523,6 +495,7 @@ button {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .right-answer__image,
@@ -539,41 +512,30 @@ button {
 .right-answer__score,
 .wrong-answer__score {
   font-size: 1.4rem;
+  margin-bottom: 1rem;
 }
 
 .wrong-answer__isright {
   margin-bottom: 2rem;
 }
 
-.right-answer__button,
-.wrong-answer__button {
-  margin-bottom: 2rem;
-  background-color: #10497f;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  font-size: 1.5rem;
-  padding: 1rem;
-  border-radius: 15px;
+.button-primary--light {
+  text-transform: none;
+  font-weight: normal;
+  margin-bottom: 1rem;
 }
 
-.right-answer__button:hover,
-.wrong-answer__button:hover {
-  background-color: #1669b6;
-  color: white;
-}
-
-.wrong-answer__button-secondary {
+.wrong-answer-button {
   margin-bottom: 1rem;
   font-size: 1rem;
   color: #10497f;
 }
 
-.wrong-answer__button-secondary:hover {
+.wrong-answer-button:hover {
   color: #1669b6;
 }
 
-/*------------------- score-overview ------------------*/
+/*--------------------------------------------- score-overview ---------------------------------------------*/
 
 .score-overview {
   color: #2f2a22;
@@ -586,19 +548,17 @@ button {
   margin-bottom: 1rem;
 }
 
-.score-overview .player,
-.game-over .player {
+.player--overview {
   display: flex;
   flex-direction: row;
 }
 
-.score-overview .player__score,
-.game-over .player__score {
+.player__score--overview {
   margin: 0.5rem;
   width: 5rem;
 }
 
-/*------------------ game-over -------------------*/
+/*--------------------------------------------- game-over -------------------------------------------------*/
 
 .game-over {
   text-align: center;
@@ -614,45 +574,22 @@ button {
   margin-top: 0;
 }
 
-.game-over-btn {
+.game-over .player:last-child {
+  margin-bottom: 1rem;
+}
+
+.game-over-buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.game-over-btn__primary {
-  background-color: #10497f;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  font-size: 1.5rem;
-  padding: 1rem;
-  border-radius: 15px;
-  margin-bottom: 1rem;
-}
-
-.game-over .player:last-child {
-  margin-bottom: 1rem;
-}
-
-.game-over-btn__primary:hover {
-  background-color: #1669b6;
-  color: white;
-}
-
-.game-over-btn__secondary {
-  color: #10497f;
-  text-decoration: none;
-  text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+.button--secondary--light {
   padding: 0.5rem;
-  border: solid 3px #10497f;
-  border-radius: 15px;
   width: 50%;
 }
 
-.game-over-btn__secondary:hover {
+.button--secondary--light:hover {
   background-color: #1669b6;
   color: white;
   border-color: #1669b6;
