@@ -14,15 +14,46 @@
     <title>Pravidla</title>
   </head>
   <body>
+    <img
+      src="images/background_5679_3195.jpg"
+      srcset="
+        images/background_600_1066.jpg   600w,
+        images/background_900_1600.jpg   900w,
+        images/background_5679_3195.jpg 5679w
+      "
+      alt="background-image"
+      class="background-image"
+    />
     <main class="rules">
-      <div class="block">
-        <h1 class="block__title">Pravidla</h1>
-        <p class="block__text">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto
-          temporibus, voluptatum eos dolorem aperiam nesciunt laudantium
-          obcaecati quasi praesentium distinctio beatae consequuntur, ducimus
-          illum quod autem amet modi iusto enim.
-        </p>
+      <div class="block block--rules">
+        <h1 class="rules-title">Pravidla</h1>
+        <ul class="rules-structure">
+          <li class="rules-structure__item">
+            Hra je určena pro jednoho až čtyři hráče. Každý hráč si zvolí své
+            jméno a barvu.
+          </li>
+          <li class="rules-structure__item">
+            Kdo je na řadě určuje Slovíčkomat – zobrazuje se v poli „Hraje“.
+          </li>
+          <li class="rules-structure__item">
+            Hráč, který je na tahu, klikne na tlačítko „HRAJ!“ a zvolí si úroveň
+            obtížnosti slovíčka (1 – 3, kdy 1 je nejlehčí a 3 nejtěžší). Poté se
+            zobrazí karta se slovíčkem k překladu. Překlad hráč napíše do
+            připraveného pole a provede kontrolu kliknutím na tlačítko
+            „Zkontroluj“.
+          </li>
+          <li class="rules-structure__item">
+            Pokud je jeho odpověď správná, Slovíčkomat automaticky přičte body
+            podle zvolené obtížnosti a hráč postoupí o daný počet políček:
+            Obtížnost 1 – 1 bod, obtížnost 2 – 2 body, obtížnost 3 – 3 body.
+          </li>
+          <li class="rules-structure__item">
+            Pokud je odpověď špatně, připisuje si hráč 0 bodů a nepostupuje.
+          </li>
+          <li class="rules-structure__item">
+            Hra končí v momentě, kdy jeden z hráčů dojde do cíle.
+          </li>
+        </ul>
       </div>
       <div class="rules-buttons">
         <a class="button button--tertiary" href="index.html">Zpět</a>

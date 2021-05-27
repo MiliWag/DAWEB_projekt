@@ -14,6 +14,16 @@
     <title>Hra</title>
   </head>
   <body>
+    <img
+      src="images/background_5679_3195.jpg"
+      srcset="
+        images/background_600_1066.jpg   600w,
+        images/background_900_1600.jpg   900w,
+        images/background_5679_3195.jpg 5679w
+      "
+      alt="background-image"
+      class="background-image"
+    />
     <main class="game">
       <header class="board">
         <div class="score-board">
@@ -41,9 +51,44 @@
             </div>
           </div>
         </div>
+        <a class="logo" href="index.html"
+          ><img
+            src="images/slovickomat_obdelnik.svg"
+            alt="game-logo"
+            class="game-logo"
+        /></a>
+        <div class="score-board-desktop">
+          <div class="who-plays">
+            <p class="who-plays__text">Hraje:</p>
+            <div class="who-plays__color"></div>
+          </div>
+
+          <div class="score-overview-players">
+            <div class="player player--overview">
+              <div class="player__color player__color--one"></div>
+              <div class="player__score player__score--overview">50 bodů</div>
+              <div class="player__name">Jindřiška</div>
+            </div>
+            <div class="player player--overview">
+              <div class="player__color player__color--two"></div>
+              <div class="player__score player__score--overview">3 bodů</div>
+              <div class="player__name">Milča</div>
+            </div>
+            <div class="player player--overview">
+              <div class="player__color player__color--three"></div>
+              <div class="player__score player__score--overview">60 bodů</div>
+              <div class="player__name">Patrik</div>
+            </div>
+            <div class="player player--overview">
+              <div class="player__color player__color--four"></div>
+              <div class="player__score player__score--overview">10 bodů</div>
+              <div class="player__name">Honza</div>
+            </div>
+          </div>
+        </div>
         <div class="play-area">
-          <button class="difficulty-choice">hraj!</button>
-          <button class="info-rules">pravidla</button>
+          <button class="difficulty-choice">Hraj!</button>
+          <button class="info-rules">Pravidla</button>
         </div>
       </header>
 
@@ -56,7 +101,7 @@
       <div class="popup-window">
         <div class="popup-window-background"></div>
         <div class="popup-window-front">
-          <!-- <label class="number-of-players" for="number-of-players"
+          <!-- <label class="number-of-players" for="players-number"
             >Zvolte počet hráčů:</label
           >
           <select
@@ -70,7 +115,9 @@
             <option value="4">4</option>
           </select>
 
-          <a class="button button--primary button--primary--small" href="#">Další</a> -->
+          <a class="button button--primary button--primary--small" href="#"
+            >Další</a
+          > -->
 
           <!--     <div class="player-card">
             <span class="player-number">Hráč č. 1</span>
@@ -86,7 +133,7 @@
             </label>
             <span class="choose-color">Zvolte barvu hráče:</span>
             <div class="player-color">
-              <label for="player_color">
+              <label for="player_color_three">
                 <input
                   class="player-color-yellow"
                   id="player_color_three"
@@ -95,7 +142,7 @@
                   value="yellow"
                 />
               </label>
-              <label for="player_color">
+              <label for="player_color_one">
                 <input
                   class="player-color-red"
                   id="player_color_one"
@@ -104,7 +151,7 @@
                   value="red"
                 />
               </label>
-              <label for="player_color">
+              <label for="player_color_two">
                 <input
                   class="player-color-blue"
                   id="player_color_two"
@@ -113,7 +160,7 @@
                   value="blue"
                 />
               </label>
-              <label for="player_color">
+              <label for="player_color_four">
                 <input
                   class="player-color-green"
                   id="player_color_four"
@@ -145,7 +192,7 @@
             <h3>Zvol si obtížnost</h3>
             <span>(1 = nejlehčí, 3 = nejtěžší)</span>
             <div class="difficulty-input">
-              <label class="difficulty-label" for="difficulty">
+              <label class="difficulty-label" for="difficulty_one">
                 <input
                   class="difficulty-input__item"
                   id="difficulty_one"
@@ -154,7 +201,7 @@
                   value="1"
                 /> obtížnost 1
               </label>
-              <label class="difficulty-label" for="difficulty">
+              <label class="difficulty-label" for="difficulty_two">
                 <input
                   class="difficulty-input__item"
                   id="difficulty_two"
@@ -163,7 +210,7 @@
                   value="2"
                 /> obtížnost 2
               </label>
-              <label class="difficulty-label" for="difficulty">
+              <label class="difficulty-label" for="ifficulty_three">
                 <input
                   class="difficulty-input__item"
                   id="difficulty_three"
@@ -244,7 +291,7 @@
               </div>
             </div>
           </div> -->
-
+          <!-- 
           <div class="game-over">
             <h2>Konec hry</h2>
             <img
@@ -288,8 +335,14 @@
                 >Domů</a
               >
             </div>
-          </div>
+          </div> -->
         </div>
+      </div>
+      <div class="contact">
+        <p class="contact__text">Nobody is perfect. Objevili jste chybu?</p>
+        <a href="mailto:padourkova.jindriska@gmail.com" class="contact__mail"
+          >Napište nám</a
+        >
       </div>
     </main>
   </body>

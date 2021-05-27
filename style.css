@@ -23,12 +23,16 @@ font-family: 'Quicksand', sans-serif; */
 
 body {
   background-color: #544b3d;
-  background-image: url('images/background_mobile02.jpg');
-  background-size: 100%;
+  margin: 0;
+}
+
+.background-image {
+  position: absolute;
+  z-index: -10;
+  width: 100%;
 }
 
 main {
-  max-width: 300px;
   padding: 1rem;
 }
 
@@ -36,7 +40,7 @@ button {
   cursor: pointer;
 }
 
-/* ---------------------------------------- index.html ----------------------------------*/
+/* ---------------------------------------- homepage ----------------------------------*/
 
 .homepage {
   font-family: 'Quicksand', sans-serif;
@@ -113,6 +117,25 @@ button {
   color: #10497f;
 }
 
+.block--rules {
+  align-items: baseline;
+  text-align: left;
+  padding: 1rem 1rem 1rem 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.rules-title {
+  margin: 1rem auto 0rem auto;
+}
+
+.rules-structure {
+  padding-inline-start: 1.5rem;
+}
+
+.rules-structure__item {
+  margin-bottom: 1rem;
+}
+
 .rules-buttons {
   display: flex;
   flex-direction: row;
@@ -143,9 +166,13 @@ button {
   font-family: 'Quicksand', sans-serif;
 }
 
+.game-logo {
+  display: none;
+}
+
 .board {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
   margin-bottom: 1rem;
 }
@@ -160,9 +187,14 @@ button {
   box-shadow: 5px 10px 15px black;
 }
 
+.score-board-desktop {
+  display: none;
+}
+
 .who-plays {
   display: flex;
   margin-bottom: 0.8rem;
+  margin-left: 0.8rem;
 }
 
 .who-plays__text {
@@ -180,7 +212,7 @@ button {
 
 .players {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .player {
@@ -217,9 +249,9 @@ button {
 }
 
 .difficulty-choice {
+  font-family: 'Quicksand', sans-serif;
   margin-bottom: 0.8rem;
   padding: 1rem 1.2rem 1rem 1.2rem;
-  text-transform: uppercase;
   text-align: center;
   font-weight: 600;
   font-size: 1.2rem;
@@ -236,10 +268,10 @@ button {
 }
 
 .info-rules {
+  font-family: 'Quicksand', sans-serif;
   background: none;
   border: none;
   color: #e6e5e1;
-  text-transform: uppercase;
   font-size: 1rem;
   padding: 0;
 }
@@ -273,16 +305,36 @@ button {
   margin: 0.5rem;
 }
 
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f5ebe0;
+  text-align: center;
+}
+
+.contact__text {
+  margin-bottom: 0;
+}
+
+.contact__mail {
+  color: #f5ebe0;
+}
+
+.contact__mail:hover {
+  color: #ebd8c2;
+}
+
 /* ----------------------------------------------- popup window --------------------------------------------*/
 
 .popup-window {
-  /*  display: none; */
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
+  /*   display: flex; */
   justify-content: center;
 }
 
@@ -551,11 +603,12 @@ button {
 .player--overview {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .player__score--overview {
   margin: 0.5rem;
-  width: 5rem;
+  width: 4rem;
 }
 
 /*--------------------------------------------- game-over -------------------------------------------------*/
@@ -593,4 +646,143 @@ button {
   background-color: #1669b6;
   color: white;
   border-color: #1669b6;
+}
+
+@media screen and (min-width: 650px) and (max-width: 864px) {
+  /*------------------------------homepage---------------------------*/
+  .homepage {
+    width: 85%;
+    margin: auto;
+  }
+
+  /*---------------------------------------rules---------------------*/
+  .rules {
+    width: 85%;
+    margin: auto;
+  }
+
+  .block--rules {
+    padding: 1.5rem;
+  }
+
+  /*--------------------------------------------- game -------------------*/
+
+  .board {
+    justify-content: space-between;
+  }
+
+  .score-board {
+    width: 40%;
+  }
+
+  .play-area {
+    flex-direction: row;
+  }
+
+  .difficulty-choice {
+    margin-right: 4rem;
+    width: 8rem;
+    padding: 1.6rem 1.2rem 1.6rem 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .info-rules {
+    font-size: 1.5rem;
+    margin-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 865px) {
+  /*--------------------------------- homepage ---------------------------*/
+  .homepage {
+    margin-top: 1rem;
+    width: 70%;
+    margin: auto;
+  }
+
+  /*---------------------------------rules---------------------------*/
+  .rules {
+    margin-top: 1rem;
+    width: 70%;
+    margin: auto;
+  }
+
+  .block--rules {
+    padding: 1rem 4rem 2rem 4rem;
+  }
+
+  /*--------------------------------------game-------------------------------*/
+
+  .game {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .game-logo {
+    display: block;
+    background-color: #f5ebe0;
+    width: 10rem;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 5px 10px 15px black;
+  }
+
+  .block--game {
+    margin: 1rem;
+    width: 70%;
+  }
+
+  .board {
+    flex-direction: column;
+    margin: 1rem 0rem 0rem 1rem;
+    align-items: center;
+  }
+
+  .score-board {
+    display: none;
+  }
+
+  .score-board-desktop {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5ebe0;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 5px 10px 15px black;
+  }
+
+  .score-board-desktop:last-child {
+    justify-content: flex-end;
+  }
+
+  .difficulty-choice {
+    width: 11rem;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    font-size: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+  }
+
+  .info-rules {
+    font-size: 2rem;
+  }
+
+  .contact {
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .block--game {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .block--game {
+    width: 80%;
+  }
 }
