@@ -137,6 +137,11 @@
   border-color: #1669b6;
 }
 
+.medium {
+  width: 10rem;
+  text-transform: none;
+}
+
 @media screen and (min-width: 650px) and (max-width: 864px) {
   .difficulty-choice {
     margin-right: 4rem;

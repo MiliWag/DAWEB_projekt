@@ -1,0 +1,28 @@
+/* ------------------------------------------- translate card ---------------------------------------------- */
+
+.translate-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #10497f;
+  margin-bottom: 1rem;
+}
+
+.translate-card__word {
+  text-align: center;
+  margin: 1rem 0rem 2rem 0rem;
+  font-size: 1.8rem;
+}
+
+.translate-card__text {
+  margin-bottom: 0.5rem;
+}
+
+.translate-card__translation {
+  color: #544b3d;
+  width: 13.5rem;
+  margin-bottom: 2.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+  border: solid 3px #10497f;
+}

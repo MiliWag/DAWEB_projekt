@@ -1,11 +1,11 @@
 import React from 'react';
 import './style.css';
 
-const PopupWindow = (props) => {
+const PopupWindow = ({ content }) => {
   return (
-    <div class="popup-window">
-      <div class="popup-window-background"></div>
-      <div class="popup-window-front">{props.childern}</div>
+    <div className="popup-window">
+      <div className="popup-window-background"></div>
+      <div className="popup-window-front">{content}</div>
     </div>
   );
 };

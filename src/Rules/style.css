@@ -1,0 +1,24 @@
+/* ---------------------------------------------- rules card ------------------------------------------------*/
+
+.rules-card {
+  width: 100%;
+  color: #10497f;
+}
+
+.rules-card-title {
+  text-align: center;
+}
+
+.rules-structure {
+  padding-inline-start: 1.5rem;
+}
+
+.rules-structure__item {
+  margin-bottom: 1rem;
+}
+
+.rules-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

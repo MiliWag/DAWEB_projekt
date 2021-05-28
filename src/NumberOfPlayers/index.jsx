@@ -5,12 +5,12 @@ import Button from '../Button/index';
 const NumberOfPlayers = () => {
   return (
     <>
-      <label class="number-of-players" for="players-number">
+      <label className="number-of-players" for="players-number">
         Zvolte počet hráčů:
       </label>
       <select
         id="players-number"
-        class="number-of-players-select"
+        className="number-of-players-select"
         name="number-of-players"
       >
         <option value="1">1</option>

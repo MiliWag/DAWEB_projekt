@@ -4,12 +4,16 @@ import './style.css';
 import Button from './Button/index';
 import PopupWindow from './PopupWindow/index';
 import NumberOfPlayers from './NumberOfPlayers/index';
-import { ProgressPlugin } from 'webpack';
+import PlayerCard from './PlayerCard/index';
+import Rules from './Rules/index';
+import Difficulty from './Difficulty/index';
+import TranslateCard from './TranslateCard/index';
+import RightAnswer from './RightAnswer/index';
 
 const Homepage = () => {
   return (
     <>
-      <div class="block">
+      <div className="block">
         <img
           src="img/slovickomat_obdelnik.svg"
           alt="homepage-logo"
@@ -32,9 +36,9 @@ const Homepage = () => {
           />
         </div>
       </div>
-      <PopupWindow>
-        <NumberOfPlayers />
-      </PopupWindow>
+      <PopupWindow
+        content={<TranslateCard word="stánek s rychlým občerstvením" />}
+      ></PopupWindow>
     </>
   );
 };
