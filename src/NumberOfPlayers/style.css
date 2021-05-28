@@ -1,0 +1,17 @@
+/*------------------------------------------------ number of players ------------------------------------------*/
+
+.number-of-players {
+  margin: 1rem 0;
+  font-size: 1.4rem;
+  color: #10497f;
+}
+
+.number-of-players-select {
+  font-family: 'Quicksand', sans-serif;
+  margin-bottom: 5rem;
+  width: 3rem;
+  font-size: 1.5rem;
+  text-align: center;
+  border: solid 2px #10497f;
+  border-radius: 2px;
+}

@@ -1,3 +1,4 @@
+/*----------------------------- homepage buttons --------------------------*/
 .button {
   width: 12rem;
   padding: 1rem;
@@ -28,4 +29,138 @@
 
 .button--secondary:hover {
   background-color: white;
+}
+
+/*---------------------------------------------rules buttons -----------------------------*/
+.button--tertiary {
+  max-width: 40%;
+  margin-right: 1rem;
+  color: #e6e5e1;
+  border-color: #e6e5e1;
+  text-transform: none;
+}
+
+.button--tertiary:hover {
+  background-color: #e6e5e1;
+  color: #544b3d;
+  border-color: #544b3d;
+}
+
+.border {
+  border-color: white;
+}
+
+/*------------------------------------------ game buttons --------------------------*/
+.difficulty-choice {
+  font-family: 'Quicksand', sans-serif;
+  margin-bottom: 0.8rem;
+  padding: 1rem 1.2rem 1rem 1.2rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #f5ebe0;
+  background-color: #10497f;
+  border: solid 3px #f5ebe0;
+  border-radius: 5px;
+  box-shadow: 5px 10px 15px black;
+}
+
+.difficulty-choice:hover {
+  background-color: #f5ebe0;
+  color: #10497f;
+}
+
+.info-rules {
+  font-family: 'Quicksand', sans-serif;
+  background: none;
+  border: none;
+  color: #e6e5e1;
+  font-size: 1rem;
+  padding: 0;
+}
+
+.info-rules:hover {
+  color: #ebd8c2;
+}
+
+.contact__mail {
+  color: #f5ebe0;
+}
+
+.contact__mail:hover {
+  color: #ebd8c2;
+}
+
+/*---------------------------------------- popup windows buttons --------------------------------------*/
+
+.small {
+  width: 8rem;
+  text-transform: none;
+  margin-bottom: 1rem;
+}
+
+.smaller {
+  width: 6rem;
+  margin-right: 0.5rem;
+}
+
+.smaller:hover {
+  color: white;
+  background-color: #1669b6;
+  border-color: #1669b6;
+}
+
+.light {
+  text-transform: none;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.wrong-answer-button {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #10497f;
+}
+
+.wrong-answer-button:hover {
+  color: #1669b6;
+}
+
+.lighter {
+  padding: 0.5rem;
+  width: 50%;
+}
+
+.lighter:hover {
+  background-color: #1669b6;
+  color: white;
+  border-color: #1669b6;
+}
+
+@media screen and (min-width: 650px) and (max-width: 864px) {
+  .difficulty-choice {
+    margin-right: 4rem;
+    width: 8rem;
+    padding: 1.6rem 1.2rem 1.6rem 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .info-rules {
+    font-size: 1.5rem;
+    margin-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 865px) {
+  .difficulty-choice {
+    width: 11rem;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    font-size: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+  }
+
+  .info-rules {
+    font-size: 2rem;
+  }
 }
