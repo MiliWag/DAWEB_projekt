@@ -1,0 +1,11 @@
+.block__start,
+.block__end {
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1rem;
+  padding: 1.2rem 0.5rem 1rem 0.5rem;
+  background-color: #10497f;
+  color: white;
+  border-radius: 50px;
+  border: solid 2px #10497f;
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
 import './style.css';
+import Block from './Block/index';
+import HomePage from './Homepage/index';
 import Button from './Button/index';
 import PopupWindow from './PopupWindow/index';
 import NumberOfPlayers from './NumberOfPlayers/index';
@@ -9,38 +11,17 @@ import Rules from './Rules/index';
 import Difficulty from './Difficulty/index';
 import TranslateCard from './TranslateCard/index';
 import RightAnswer from './RightAnswer/index';
+import WrongAnswer from './WrongAnswer/index';
+import ScoreOverview from './ScoreOverview/index';
+import GameOver from './GameOver';
+import Game from './Game/index';
 
-const Homepage = () => {
+const App = () => {
   return (
     <>
-      <div className="block">
-        <img
-          src="img/slovickomat_obdelnik.svg"
-          alt="homepage-logo"
-          className="homepage-logo"
-        />
-        <h1 className="block-text">
-          Procvičte si anglická slovíčka v naší hře
-        </h1>
-
-        <div className="homepage-buttons">
-          <Button
-            nameOfClass="button button--secondary"
-            link="rules.html"
-            textContent="Jak na to?"
-          />
-          <Button
-            nameOfClass="button button--primary"
-            link="game.html"
-            textContent="Hrát"
-          />
-        </div>
-      </div>
-      <PopupWindow
-        content={<TranslateCard word="stánek s rychlým občerstvením" />}
-      ></PopupWindow>
+      <Game />
     </>
   );
 };
 
-render(<Homepage />, document.querySelector('.homepage'));
+render(<App />, document.querySelector('.homepage'));

@@ -1,0 +1,39 @@
+.player--overview {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.player__score--overview {
+  margin: 0.5rem;
+  width: 4rem;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player__color {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50px;
+}
+
+.player__color--one {
+  background-color: #90131b;
+}
+
+.player__color--two {
+  background-color: #10497f;
+}
+
+.player__color--three {
+  background-color: #f7e135;
+}
+
+.player__color--four {
+  background-color: #5f8731;
+}

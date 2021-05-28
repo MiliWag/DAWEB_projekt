@@ -1,0 +1,7 @@
+.block__field {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50px;
+  border: solid 2px #544b3d;
+  margin: 0.5rem;
+}

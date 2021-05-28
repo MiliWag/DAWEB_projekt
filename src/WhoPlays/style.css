@@ -1,0 +1,18 @@
+.who-plays {
+  display: flex;
+  margin-bottom: 0.8rem;
+  margin-left: 0.8rem;
+}
+
+.who-plays__text {
+  text-transform: uppercase;
+  margin: 0 0.5rem 0 0;
+}
+
+.who-plays__color {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50px;
+  background-color: #90131b;
+  box-shadow: 5px 5px 5px #988971;
+}

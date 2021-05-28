@@ -1,0 +1,70 @@
+.board {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.score-board {
+  background-color: #f5ebe0;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  width: 55%;
+  border-radius: 5px;
+  box-shadow: 5px 10px 15px black;
+}
+
+.score-board-desktop {
+  display: none;
+}
+
+.players {
+  display: flex;
+  justify-content: space-around;
+}
+
+.play-area {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 650px) and (max-width: 864px) {
+  .board {
+    justify-content: space-between;
+  }
+
+  .score-board {
+    width: 40%;
+  }
+
+  .play-area {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 865px) {
+  .board {
+    flex-direction: column;
+    margin: 1rem 0rem 0rem 1rem;
+    align-items: center;
+  }
+
+  .score-board {
+    display: none;
+  }
+
+  .score-board-desktop {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5ebe0;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 5px 10px 15px black;
+  }
+
+  .score-board-desktop:last-child {
+    justify-content: flex-end;
+  }
+}
