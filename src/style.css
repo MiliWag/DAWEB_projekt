@@ -158,7 +158,7 @@ button {
   border-color: #544b3d;
 }
 
-.button--primary--border {
+.border {
   border-color: white;
 }
 
@@ -383,7 +383,7 @@ button {
   border-radius: 2px;
 }
 
-.button--primary--small {
+.small {
   width: 8rem;
   text-transform: none;
   margin-bottom: 1rem;
@@ -506,7 +506,7 @@ button {
   margin-right: 0.5rem;
 }
 
-.button--primary--medium {
+.medium {
   width: 10rem;
   text-transform: none;
 }
@@ -573,7 +573,7 @@ button {
   margin-bottom: 2rem;
 }
 
-.button-primary--light {
+.light {
   text-transform: none;
   font-weight: normal;
   margin-bottom: 1rem;
@@ -639,12 +639,12 @@ button {
   align-items: center;
 }
 
-.button--secondary--light {
+.lighter {
   padding: 0.5rem;
   width: 50%;
 }
 
-.button--secondary--light:hover {
+.lighter:hover {
   background-color: #1669b6;
   color: white;
   border-color: #1669b6;

@@ -1,22 +1,26 @@
 import React from 'react';
 import { render } from 'react-dom';
 import './style.css';
+import Button from './Button/index';
 
 const Homepage = () => {
   return (
     <div class="block">
       <img
-        src="src/img/slovickomat_obdelnik.svg')"
+        src="img/slovickomat_obdelnik.svg"
         alt="homepage-logo"
-        class="homepage-logo"
+        className="homepage-logo"
       />
-      <h1 class="block-text">Procvičte si anglická slovíčka v naší hře</h1>
+      <h1 className="block-text">Procvičte si anglická slovíčka v naší hře</h1>
 
-      <div class="homepage-buttons">
-        <a class="button button--secondary" href="rules.html">
-          Jak na to?
-        </a>
-        <a class="button button--primary" href="game.html">
+      <div className="homepage-buttons">
+        <Button
+          nameOfClass="button button--secondary"
+          link="rules.html"
+          textContent="Jak na to?"
+        />
+
+        <a className="button button--primary" href="game.html">
           Hrát
         </a>
       </div>
