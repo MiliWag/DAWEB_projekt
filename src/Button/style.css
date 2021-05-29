@@ -104,6 +104,7 @@
 .smaller {
   width: 6rem;
   margin-right: 0.5rem;
+  background-color: white;
 }
 
 .smaller:hover {

@@ -11,6 +11,7 @@
 
 .rules-structure {
   padding-inline-start: 1.5rem;
+  text-align: start;
 }
 
 .rules-structure__item {

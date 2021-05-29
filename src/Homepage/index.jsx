@@ -4,16 +4,27 @@ import Button from '../Button/index';
 import PopupWindow from '../PopupWindow/index';
 import NumberOfPlayers from '../NumberOfPlayers';
 import Rules from '../Rules/index';
+import PlayerCard from '../PlayerCard';
+import GameSettings from '../GameSettings';
 
 const HomePage = () => {
-  const [popup, setPopup] = useState('popup-window hidden');
-  const [popupContent, setPopupContent] = useState();
+  const [showPopup, setShowPopup] = useState(false);
+  const [showRules, setShowRules] = useState(false);
+  const [showGameSettings, setShowGameSettings] = useState(false);
 
-  const handlePopupOpen = (content) => {
-    console.log(content);
-    setPopup('popup-window');
-    setPopupContent(content);
+  const handleShowPopup = () => setShowPopup(true);
+  const handleShowRules = () => {
+    setShowRules(true);
+    setShowPopup(true);
   };
+  const handleShowGameSettings = () => {
+    setShowGameSettings(true);
+    setShowPopup(true);
+  };
+
+  const handleClosePopup = () => setShowPopup(false);
+
+  const popupWindowClass = showPopup ? 'popup-window' : 'popup-window hidden';
 
   return (
     <>
@@ -23,15 +34,18 @@ const HomePage = () => {
         className="homepage-logo"
       />
       <h1 className="block-text">Procvičte si anglická slovíčka v naší hře</h1>
-      <PopupWindow nameOfClass={popup}>{popupContent}</PopupWindow>
+      <PopupWindow nameOfClass={popupWindowClass}>
+        {showRules && <Rules />}
+        {showGameSettings && <GameSettings />}
+      </PopupWindow>
       <div className="homepage-buttons">
         <Button
-          onClick={() => handlePopupOpen(<Rules />)}
+          onClick={handleShowRules}
           nameOfClass="button button--secondary"
           textContent="Jak na to?"
         />
         <Button
-          onClick={() => handlePopupOpen(<NumberOfPlayers />)}
+          onClick={handleShowGameSettings}
           nameOfClass="button button--primary"
           textContent="Hrát"
         />

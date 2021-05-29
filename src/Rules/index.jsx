@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import Button from '../Button/index';
+import HomePage from '../Homepage/index';
 
 const Rules = () => {
   return (
@@ -36,8 +37,8 @@ const Rules = () => {
         </ul>
 
         <Button
+          onClick={<HomePage />}
           nameOfClass="button button--primary border"
-          link="#"
           textContent="Zpět"
         />
       </div>

@@ -3,7 +3,7 @@ import './style.css';
 import Button from '../Button/index';
 import PlayerCard from '../PlayerCard/index';
 
-const NumberOfPlayers = ({ onPopupOpen }) => {
+const NumberOfPlayers = ({ onNextStep }) => {
   return (
     <>
       <label className="number-of-players" htmlFor="players-number">
@@ -21,10 +21,9 @@ const NumberOfPlayers = ({ onPopupOpen }) => {
       </select>
 
       <Button
-        onClick={() => onPopupOpen(<PlayerCard />)}
+        onClick={onNextStep}
         nameOfClass="button button--primary small"
         textContent="Další"
-        onPopupOpen={() => onPopupOpen(<PlayerCard />)}
       />
     </>
   );

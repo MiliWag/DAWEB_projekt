@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 import './style.css';
 import Button from '../Button/index';
+import NumberOfPlayers from '../NumberOfPlayers';
 
-const PlayerCard = () => {
-  const [value, setValue] = useState(1);
-  const number = () => {
-    setValue(value + 1);
-  };
+const PlayerCard = ({ onNextStep, onPreviousStep, playerNumber }) => {
   return (
     <>
       <div className="player-card">
-        <span className="player-number">Hráč č. {number}</span>
+        <span className="player-number">Hráč č. {playerNumber}</span>
 
         <label htmlFor="input_for_name">
           Jméno:
@@ -63,13 +60,13 @@ const PlayerCard = () => {
 
         <div className="player-card-buttons">
           <Button
+            onClick={onPreviousStep}
             nameOfClass="button button--secondary smaller"
-            link="#"
             textContent="Zpět"
           />
           <Button
+            onClick={onNextStep}
             nameOfClass="button button--primary small"
-            link="#"
             textContent="Další"
           />
         </div>
