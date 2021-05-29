@@ -1,8 +1,8 @@
 import React from 'react';
 import './style.css';
 
-const Block = ({ content, classBlock }) => {
-  return <div className={`block ` + classBlock}>{content}</div>;
+const Block = ({ children, classBlock }) => {
+  return <div className={`block ` + classBlock}>{children}</div>;
 };
 
 export default Block;

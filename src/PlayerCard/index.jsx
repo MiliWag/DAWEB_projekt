@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css';
 import Button from '../Button/index';
 
-const PlayerCard = ({ number }) => {
+const PlayerCard = () => {
+  const [value, setValue] = useState(1);
+  const number = () => {
+    setValue(value + 1);
+  };
   return (
     <>
       <div className="player-card">
         <span className="player-number">Hráč č. {number}</span>
 
-        <label for="input_for_name">
+        <label htmlFor="input_for_name">
           Jméno:
           <input
             className="input-for-name"
@@ -19,7 +23,7 @@ const PlayerCard = ({ number }) => {
         </label>
         <span className="choose-color">Zvolte barvu hráče:</span>
         <div className="player-color">
-          <label for="player_color_three">
+          <label htmlFor="player_color_three">
             <input
               className="player-color-yellow"
               id="player_color_three"
@@ -28,7 +32,7 @@ const PlayerCard = ({ number }) => {
               value="yellow"
             />
           </label>
-          <label for="player_color_one">
+          <label htmlFor="player_color_one">
             <input
               className="player-color-red"
               id="player_color_one"
@@ -37,7 +41,7 @@ const PlayerCard = ({ number }) => {
               value="red"
             />
           </label>
-          <label for="player_color_two">
+          <label htmlFor="player_color_two">
             <input
               className="player-color-blue"
               id="player_color_two"
@@ -46,7 +50,7 @@ const PlayerCard = ({ number }) => {
               value="blue"
             />
           </label>
-          <label for="player_color_four">
+          <label htmlFor="player_color_four">
             <input
               className="player-color-green"
               id="player_color_four"

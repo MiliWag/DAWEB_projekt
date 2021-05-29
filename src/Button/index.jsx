@@ -1,11 +1,11 @@
 import React from 'react';
 import './style.css';
 
-const Button = ({ nameOfClass, link, textContent }) => {
+const Button = ({ onClick, nameOfClass, textContent, onPopupOpen }) => {
   return (
-    <a className={nameOfClass} href={link}>
+    <button className={nameOfClass} onClick={onClick}>
       {textContent}
-    </a>
+    </button>
   );
 };
 

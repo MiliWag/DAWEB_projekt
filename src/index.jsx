@@ -15,12 +15,15 @@ import WrongAnswer from './WrongAnswer/index';
 import ScoreOverview from './ScoreOverview/index';
 import GameOver from './GameOver';
 import Game from './Game/index';
+import HomePage from './Homepage/index';
 
 const App = () => {
   return (
     <>
-      {/* <Block content={<Homepage />} /> */}
-      <Game />
+      <Block>
+        <HomePage />
+      </Block>
+      {/* <Game /> */}
     </>
   );
 };

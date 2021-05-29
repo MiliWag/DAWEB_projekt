@@ -34,18 +34,12 @@ const Rules = () => {
             Hra končí v momentě, kdy jeden z hráčů dojde do cíle.
           </li>
         </ul>
-        <div className="rules-buttons">
-          <Button
-            nameOfClass="button button--tertiary"
-            link="#"
-            textContent="Zpět"
-          />
-          <Button
-            nameOfClass="button button--primary border"
-            link="#"
-            textContent="Hrát"
-          />
-        </div>
+
+        <Button
+          nameOfClass="button button--primary border"
+          link="#"
+          textContent="Zpět"
+        />
       </div>
     </>
   );

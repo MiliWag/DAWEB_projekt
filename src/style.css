@@ -26,6 +26,10 @@ body {
   margin: 0;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .background-image {
   position: absolute;
   z-index: -10;

@@ -8,6 +8,7 @@
   font-size: 1.5rem;
   border: solid 3px #10497f;
   border-radius: 15px;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .button--primary {
@@ -25,6 +26,7 @@
   text-transform: none;
   color: #10497f;
   margin-bottom: 1rem;
+  background-color: #f5ebe0;
 }
 
 .button--secondary:hover {

@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.css';
 import Button from '../Button/index';
+import PlayerCard from '../PlayerCard/index';
 
-const NumberOfPlayers = () => {
+const NumberOfPlayers = ({ onPopupOpen }) => {
   return (
     <>
-      <label className="number-of-players" for="players-number">
+      <label className="number-of-players" htmlFor="players-number">
         Zvolte počet hráčů:
       </label>
       <select
@@ -18,10 +19,12 @@ const NumberOfPlayers = () => {
         <option value="3">3</option>
         <option value="4">4</option>
       </select>
+
       <Button
+        onClick={() => onPopupOpen(<PlayerCard />)}
         nameOfClass="button button--primary small"
-        link="#"
         textContent="Další"
+        onPopupOpen={() => onPopupOpen(<PlayerCard />)}
       />
     </>
   );
