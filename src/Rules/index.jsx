@@ -3,7 +3,7 @@ import './style.css';
 import Button from '../Button/index';
 import HomePage from '../Homepage/index';
 
-const Rules = () => {
+const Rules = ({ onShowPopup }) => {
   return (
     <>
       <div className="rules-card">
@@ -37,7 +37,7 @@ const Rules = () => {
         </ul>
 
         <Button
-          onClick={<HomePage />}
+          onClick={onShowPopup}
           nameOfClass="button button--primary border"
           textContent="Zpět"
         />

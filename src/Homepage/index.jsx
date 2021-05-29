@@ -12,17 +12,17 @@ const HomePage = () => {
   const [showRules, setShowRules] = useState(false);
   const [showGameSettings, setShowGameSettings] = useState(false);
 
-  const handleShowPopup = () => setShowPopup(true);
+  const handleShowPopup = () => setShowPopup(!showPopup);
+
   const handleShowRules = () => {
-    setShowRules(true);
-    setShowPopup(true);
-  };
-  const handleShowGameSettings = () => {
-    setShowGameSettings(true);
-    setShowPopup(true);
+    setShowRules(!showRules);
+    setShowPopup(!showPopup);
   };
 
-  const handleClosePopup = () => setShowPopup(false);
+  const handleShowGameSettings = () => {
+    setShowGameSettings(true);
+    setShowPopup(!showPopup);
+  };
 
   const popupWindowClass = showPopup ? 'popup-window' : 'popup-window hidden';
 
@@ -35,8 +35,8 @@ const HomePage = () => {
       />
       <h1 className="block-text">Procvičte si anglická slovíčka v naší hře</h1>
       <PopupWindow nameOfClass={popupWindowClass}>
-        {showRules && <Rules />}
-        {showGameSettings && <GameSettings />}
+        {showRules && <Rules onShowPopup={handleShowPopup} />}
+        {showGameSettings && <GameSettings onShowPopup={handleShowPopup} />}
       </PopupWindow>
       <div className="homepage-buttons">
         <Button

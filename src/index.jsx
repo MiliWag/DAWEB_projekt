@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { render } from 'react-dom';
 import './style.css';
 import Block from './Block/index';
@@ -18,12 +18,19 @@ import Game from './Game/index';
 import HomePage from './Homepage/index';
 
 const App = () => {
+  const [isGameSet, setIsGameSet] = useState(false);
+
+  const handleIsGameSet = () => setIsGameSet(!isGameSet);
+
   return (
     <>
-      <Block>
-        <HomePage />
-      </Block>
-      {/* <Game /> */}
+      {isGameSet && <Game onIsGameSet={handleIsGameSet} />}
+
+      {!isGameSet && (
+        <Block>
+          <HomePage />
+        </Block>
+      )}
     </>
   );
 };
