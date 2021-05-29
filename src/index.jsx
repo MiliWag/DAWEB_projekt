@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import './style.css';
 import Block from './Block/index';
-import HomePage from './Homepage/index';
+import Homepage from './Homepage/index';
 import Button from './Button/index';
 import PopupWindow from './PopupWindow/index';
 import NumberOfPlayers from './NumberOfPlayers/index';
@@ -19,9 +19,10 @@ import Game from './Game/index';
 const App = () => {
   return (
     <>
+      {/* <Block content={<Homepage />} /> */}
       <Game />
     </>
   );
 };
 
-render(<App />, document.querySelector('.homepage'));
+render(<App />, document.querySelector('#app'));

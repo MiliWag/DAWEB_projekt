@@ -1,4 +1,4 @@
-.board {
+.header {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
@@ -10,13 +10,9 @@
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
-  width: 55%;
+  width: 100%;
   border-radius: 5px;
   box-shadow: 5px 10px 15px black;
-}
-
-.score-board-desktop {
-  display: none;
 }
 
 .players {
@@ -50,10 +46,6 @@
     align-items: center;
   }
 
-  .score-board {
-    display: none;
-  }
-
   .score-board-desktop {
     display: flex;
     flex-direction: column;
@@ -66,5 +58,10 @@
 
   .score-board-desktop:last-child {
     justify-content: flex-end;
+  }
+
+  .header {
+    flex-direction: column;
+    width: 25%;
   }
 }

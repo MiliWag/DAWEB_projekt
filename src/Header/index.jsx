@@ -5,22 +5,10 @@ import WhoPlays from '../WhoPlays/index';
 import Button from '../Button/index';
 import ScoreOverview from '../ScoreOverview';
 
-const Board = () => {
+const Header = () => {
   return (
     <>
-      <header className="board">
-        <div class="score-board">
-          <WhoPlays color="who-play__color" />
-
-          <div class="players">
-            <Player
-              nameOfClass="player"
-              color="player__color player__color--two"
-              classForScore="player__score"
-              point="60"
-            />
-          </div>
-        </div>
+      <header className="header">
         <a class="logo" href="index.html">
           <img
             src="../img/slovickomat_obdelnik.svg"
@@ -28,7 +16,7 @@ const Board = () => {
             class="game-logo"
           />
         </a>
-        <div class="score-board-desktop">
+        <div class="score-board">
           <WhoPlays color="who-play__color" />
           <ScoreOverview />
         </div>
@@ -42,4 +30,4 @@ const Board = () => {
   );
 };
 
-export default Board;
+export default Header;

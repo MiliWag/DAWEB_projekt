@@ -2,6 +2,7 @@
 
 .game {
   font-family: 'Quicksand', sans-serif;
+  flex-wrap: wrap;
 }
 
 .game-logo {
@@ -23,8 +24,6 @@
 @media screen and (min-width: 865px) {
   .game {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
   }
 
   .game-logo {
@@ -35,11 +34,6 @@
     padding: 1rem;
     margin-bottom: 2rem;
     box-shadow: 5px 10px 15px black;
-  }
-
-  .block--game {
-    margin: 1rem;
-    width: 70%;
   }
 
   .contact {

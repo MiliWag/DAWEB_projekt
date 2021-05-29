@@ -3,10 +3,18 @@
 .score-overview {
   color: #2f2a22;
   text-align: center;
+  width: 100%;
 }
-.score-overview-players {
+.score-overview__players {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-bottom: 1rem;
   align-items: center;
+  justify-content: space-around;
+}
+
+@media screen and (min-width: 865px) {
+  .score-overview__players {
+    flex-direction: column;
+  }
 }

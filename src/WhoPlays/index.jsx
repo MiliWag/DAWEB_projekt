@@ -3,9 +3,9 @@ import './style.css';
 
 const WhoPlays = ({ color }) => {
   return (
-    <div class="who-plays">
-      <p class="who-plays__text">Hraje:</p>
-      <div class={color}></div>
+    <div className="who-plays">
+      <p className="who-plays__text">Hraje:</p>
+      <div className={color}></div>
     </div>
   );
 };

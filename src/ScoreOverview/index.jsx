@@ -7,7 +7,7 @@ const ScoreOverview = ({ header }) => {
     <>
       <div className="score-overview">
         <h2>{header}</h2>
-        <div className="score-overview-players">
+        <div className="score-overview__players">
           <Player
             point="20"
             name="Mili"

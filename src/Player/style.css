@@ -5,9 +5,8 @@
   align-items: center;
 }
 
-.player__score--overview {
+.player__score {
   margin: 0.5rem;
-  width: 4rem;
 }
 
 .player {
@@ -36,4 +35,26 @@
 
 .player__color--four {
   background-color: #5f8731;
+}
+
+.player__name {
+  display: none;
+}
+
+.player__points {
+  display: none;
+}
+
+@media screen and (min-width: 865px) {
+  .player__name {
+    display: block;
+  }
+
+  .player__points {
+    display: inline-block;
+  }
+
+  .player {
+    flex-direction: row;
+  }
 }
