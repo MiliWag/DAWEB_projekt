@@ -22,7 +22,6 @@ const GameSettings = ({ onShowPopup, onIsGameSet }) => {
 
   const isGameSet = step === numberTest ? true : false;
 
-  console.log(step);
   return (
     <>
       {step === 0 && <NumberOfPlayers onNextStep={handleNextStep} />}

@@ -28,7 +28,7 @@ const App = () => {
 
       {!isGameSet && (
         <Block>
-          <HomePage />
+          <HomePage onIsGameSet={handleIsGameSet} />
         </Block>
       )}
     </>

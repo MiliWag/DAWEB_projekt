@@ -7,7 +7,7 @@ import Rules from '../Rules/index';
 import PlayerCard from '../PlayerCard';
 import GameSettings from '../GameSettings';
 
-const HomePage = () => {
+const HomePage = ({ onIsGameSet }) => {
   const [showPopup, setShowPopup] = useState(false);
   const [showRules, setShowRules] = useState(false);
   const [showGameSettings, setShowGameSettings] = useState(false);
@@ -22,6 +22,7 @@ const HomePage = () => {
   const handleShowGameSettings = () => {
     setShowGameSettings(true);
     setShowPopup(!showPopup);
+    setShowRules(false);
   };
 
   const popupWindowClass = showPopup ? 'popup-window' : 'popup-window hidden';
@@ -36,7 +37,12 @@ const HomePage = () => {
       <h1 className="block-text">Procvičte si anglická slovíčka v naší hře</h1>
       <PopupWindow nameOfClass={popupWindowClass}>
         {showRules && <Rules onShowPopup={handleShowPopup} />}
-        {showGameSettings && <GameSettings onShowPopup={handleShowPopup} />}
+        {showGameSettings && (
+          <GameSettings
+            onShowPopup={handleShowPopup}
+            onIsGameSet={onIsGameSet}
+          />
+        )}
       </PopupWindow>
       <div className="homepage-buttons">
         <Button
