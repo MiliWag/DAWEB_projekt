@@ -5,7 +5,7 @@ import PlayerCard from '../PlayerCard/index';
 
 const NumberOfPlayers = ({ onNextStep, onNumberOfPlayers }) => {
   const handleChange = (e) => {
-    onNumberOfPlayers(e.target.value);
+    onNumberOfPlayers(Number(e.target.value));
   };
   return (
     <>

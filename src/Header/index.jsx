@@ -23,6 +23,7 @@ const Header = () => {
   const handleShowWord = () => {
     setShowWord(!showWord);
     setShowPopup(!showPopup);
+    setShowRules(false);
   };
 
   const popupWindowClass = showPopup ? 'popup-window' : 'popup-window hidden';
