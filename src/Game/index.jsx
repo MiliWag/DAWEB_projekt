@@ -17,8 +17,28 @@ const Game = ({ testPlayerData }) => {
       .then((vocabularyData) => setVocabularyData(vocabularyData))
       .catch((err) => console.warn(err));
   }, []);
-  console.log(vocabularyData);
-  console.log([Math.floor(Math.random() * vocabularyData.length)]);
+
+  const wordsLevelOne = vocabularyData.filter((word) => {
+    return word.level === '1';
+  });
+
+  const wordsLevelTwo = vocabularyData.filter((word) => {
+    return word.level === '2';
+  });
+
+  const wordsLevelThree = vocabularyData.filter((word) => {
+    return word.level === '3';
+  });
+
+  const randomWordIndex = (wordsArray) => {
+    return Math.floor(Math.random() * wordsArray.length);
+  };
+
+  const randomWordObject = (wordsArray) => {
+    return wordsArray[randomWordIndex(wordsArray)];
+  };
+
+  const randomWordLevelOne = randomWordObject(wordsLevelOne);
 
   return (
     <>
@@ -27,6 +47,7 @@ const Game = ({ testPlayerData }) => {
         <Playground />
       </Block>
       <Footer />
+      {console.log(vocabularyData)}
     </>
   );
 };
