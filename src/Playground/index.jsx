@@ -5,9 +5,9 @@ import PlayField from '../PlayField/index';
 const Playground = () => {
   return (
     <>
-      <div class="block__start">Start</div>
+      <div className="block__start">Start</div>
       <PlayField />
-      <div class="block__end">Cíl</div>
+      <div className="block__end">Cíl</div>
     </>
   );
 };

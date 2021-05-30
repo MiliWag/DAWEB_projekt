@@ -3,13 +3,17 @@ import './style.css';
 import Button from '../Button/index';
 import PlayerCard from '../PlayerCard/index';
 
-const NumberOfPlayers = ({ onNextStep }) => {
+const NumberOfPlayers = ({ onNextStep, onNumberOfPlayers }) => {
+  const handleChange = (e) => {
+    onNumberOfPlayers(e.target.value);
+  };
   return (
     <>
       <label className="number-of-players" htmlFor="players-number">
         Zvolte počet hráčů:
       </label>
       <select
+        onChange={handleChange}
         id="players-number"
         className="number-of-players-select"
         name="number-of-players"
