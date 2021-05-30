@@ -2,32 +2,20 @@ import React from 'react';
 import './style.css';
 import Player from '../Player/index';
 
-const ScoreOverview = ({ header }) => {
+const ScoreOverview = ({ header, testPlayerData }) => {
   return (
     <>
       <div className="score-overview">
         <h2>{header}</h2>
         <div className="score-overview__players">
-          <Player
-            point="20"
-            name="Mili"
-            color="player__color player__color--four"
-          />
-          <Player
-            point="20"
-            name="Mili"
-            color="player__color player__color--four"
-          />
-          <Player
-            point="20"
-            name="Mili"
-            color="player__color player__color--four"
-          />
-          <Player
-            point="20"
-            name="Mili"
-            color="player__color player__color--four"
-          />
+          {testPlayerData.map((player) => (
+            <Player
+              key={player.id}
+              point="20"
+              name={player.name}
+              color={`player__color ` + player.color}
+            />
+          ))}
         </div>
       </div>
     </>

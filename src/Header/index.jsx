@@ -8,7 +8,7 @@ import PopupWindow from '../PopupWindow/index';
 import Rules from '../Rules/index';
 import TranslateCard from '../TranslateCard';
 
-const Header = () => {
+const Header = ({ testPlayerData }) => {
   const [showPopup, setShowPopup] = useState(false);
   const [showRules, setShowRules] = useState(false);
   const [showWord, setShowWord] = useState(false);
@@ -40,7 +40,7 @@ const Header = () => {
         </a>
         <div className="score-board">
           <WhoPlays color="who-play__color" />
-          <ScoreOverview />
+          {/*  <ScoreOverview testPlayerData={testPlayerData} /> */}
         </div>
 
         <PopupWindow nameOfClass={popupWindowClass}>

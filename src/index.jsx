@@ -19,16 +19,27 @@ import HomePage from './Homepage/index';
 
 const App = () => {
   const [isGameSet, setIsGameSet] = useState(false);
+  const [testPlayerData, setTestPlayerData] = useState([]);
+
+  const handleTestPlayerData = (array) => {
+    setTestPlayerData(array);
+  };
 
   const handleIsGameSet = () => setIsGameSet(!isGameSet);
-
+  console.log(testPlayerData);
   return (
     <>
-      {isGameSet && <Game onIsGameSet={handleIsGameSet} />}
+      <Game />
+      {isGameSet && (
+        <Game onIsGameSet={handleIsGameSet} testPlayerData={testPlayerData} />
+      )}
 
       {!isGameSet && (
         <Block>
-          <HomePage onIsGameSet={handleIsGameSet} />
+          <HomePage
+            onIsGameSet={handleIsGameSet}
+            onTestPlayerData={handleTestPlayerData}
+          />
         </Block>
       )}
     </>
