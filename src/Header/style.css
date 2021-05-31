@@ -26,10 +26,6 @@
 }
 
 @media screen and (min-width: 650px) and (max-width: 864px) {
-  .board {
-    justify-content: space-between;
-  }
-
   .score-board {
     width: 40%;
   }
@@ -46,7 +42,7 @@
     align-items: center;
   }
 
-  .score-board-desktop {
+  .score-board {
     display: flex;
     flex-direction: column;
     background-color: #f5ebe0;
@@ -56,7 +52,7 @@
     box-shadow: 5px 10px 15px black;
   }
 
-  .score-board-desktop:last-child {
+  .score-board:last-child {
     justify-content: flex-end;
   }
 

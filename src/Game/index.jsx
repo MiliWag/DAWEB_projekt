@@ -1,13 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.css';
 import Header from '../Header/index';
 import Block from '../Block/index';
 import Playground from '../Playground/index';
 import Footer from '../Footer/index';
 import Tabletop from 'tabletop';
+import WhoPlays from '../WhoPlays/index';
+import ScoreOverview from '../ScoreOverview/index';
 
 const Game = ({ testPlayerData }) => {
   const [vocabularyData, setVocabularyData] = useState([]);
+  const [randomWord, setRandomWord] = useState({
+    id: '',
+    level: '',
+    cz: '',
+    en: '',
+    en_2: '',
+    en_3: '',
+    en_4: '',
+    en_5: '',
+  });
 
   useEffect(() => {
     Tabletop.init({
@@ -17,37 +29,34 @@ const Game = ({ testPlayerData }) => {
       .then((vocabularyData) => setVocabularyData(vocabularyData))
       .catch((err) => console.warn(err));
   }, []);
-
-  const wordsLevelOne = vocabularyData.filter((word) => {
-    return word.level === '1';
-  });
-
-  const wordsLevelTwo = vocabularyData.filter((word) => {
-    return word.level === '2';
-  });
-
-  const wordsLevelThree = vocabularyData.filter((word) => {
-    return word.level === '3';
-  });
-
-  const randomWordIndex = (wordsArray) => {
-    return Math.floor(Math.random() * wordsArray.length);
+  const getWordsByLevel = (level) => {
+    return vocabularyData.filter((word) => word.level === level);
   };
 
-  const randomWordObject = (wordsArray) => {
-    return wordsArray[randomWordIndex(wordsArray)];
+  const getRandomWordObject = (level) => {
+    const wordsArray = getWordsByLevel(level);
+    const randomWordIndex = Math.floor(Math.random() * wordsArray.length);
+    return wordsArray[randomWordIndex];
   };
 
-  const randomWordLevelOne = randomWordObject(wordsLevelOne);
-
+  const handleRandomWord = (level) => {
+    setRandomWord(getRandomWordObject(level));
+  };
+  // const randomWordCZ = randomWord.cz;
   return (
     <>
-      <Header testPlayerData={testPlayerData} />
-      <Block classBlock="block--game">
-        <Playground />
-      </Block>
+      <Header
+        randomWordObject={randomWord}
+        onRandomWord={handleRandomWord}
+        testPlayerData={testPlayerData}
+      />
+
+      <div className="score-board">
+        <WhoPlays color="who-play__color" />
+        {/*  <ScoreOverview testPlayerData={testPlayerData} /> */}
+      </div>
+
       <Footer />
-      {console.log(vocabularyData)}
     </>
   );
 };

@@ -8,8 +8,7 @@
 .score-overview__players {
   display: flex;
   flex-direction: row;
-  margin-bottom: 1rem;
-  align-items: center;
+
   justify-content: space-around;
 }
 

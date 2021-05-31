@@ -29,7 +29,6 @@ const App = () => {
   console.log(testPlayerData);
   return (
     <>
-      <Game />
       {isGameSet && (
         <Game onIsGameSet={handleIsGameSet} testPlayerData={testPlayerData} />
       )}

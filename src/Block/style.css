@@ -21,15 +21,3 @@
     width: 70%;
   }
 }
-
-@media screen and (min-width: 1100px) {
-  .block--game {
-    width: 75%;
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  .block--game {
-    width: 80%;
-  }
-}

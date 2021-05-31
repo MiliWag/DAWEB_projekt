@@ -1,6 +1,8 @@
 /* ---------------------------------------------- rules card ------------------------------------------------*/
 
 .rules-card {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   color: #10497f;
 }
@@ -16,6 +18,10 @@
 
 .rules-structure__item {
   margin-bottom: 1rem;
+}
+
+.rules-card:last-child {
+  align-items: center;
 }
 
 .rules-buttons {

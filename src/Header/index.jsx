@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import './style.css';
 import Player from '../Player/index';
-import WhoPlays from '../WhoPlays/index';
+
 import Button from '../Button/index';
 import ScoreOverview from '../ScoreOverview';
 import PopupWindow from '../PopupWindow/index';
 import Rules from '../Rules/index';
 import TranslateCard from '../TranslateCard';
 
-const Header = ({ testPlayerData }) => {
+const Header = ({ testPlayerData, onRandomWord, randomWordObject }) => {
   const [showPopup, setShowPopup] = useState(false);
   const [showRules, setShowRules] = useState(false);
-  const [showWord, setShowWord] = useState(false);
+  const [showTranslateCard, setShowTranslateCard] = useState(false);
+  const [showWordLevel, setShowWordLevel] = useState(false);
 
   const handleShowPopup = () => setShowPopup(!showPopup);
 
@@ -20,12 +21,17 @@ const Header = ({ testPlayerData }) => {
     setShowPopup(!showPopup);
   };
 
-  const handleShowWord = () => {
-    setShowWord(!showWord);
-    setShowPopup(!showPopup);
+  const handleShowTranslateCard = (wordLevel) => {
+    setShowTranslateCard(!showTranslateCard);
     setShowRules(false);
+    setShowWordLevel(false);
+    onRandomWord(wordLevel);
   };
-
+  const handleShowWordLevel = () => {
+    setShowPopup(!showPopup);
+    setShowWordLevel(!showWordLevel);
+  };
+  console.log(showWordLevel);
   const popupWindowClass = showPopup ? 'popup-window' : 'popup-window hidden';
 
   return (
@@ -38,19 +44,35 @@ const Header = ({ testPlayerData }) => {
             className="game-logo"
           />
         </a>
-        <div className="score-board">
-          <WhoPlays color="who-play__color" />
-          {/*  <ScoreOverview testPlayerData={testPlayerData} /> */}
-        </div>
 
         <PopupWindow nameOfClass={popupWindowClass}>
           {showRules && <Rules onShowPopup={handleShowPopup} />}
-          {showWord && <TranslateCard onShowWord={handleShowWord} />}
+          {showWordLevel && (
+            <>
+              <h2>Vyberte si obtížnost slovíčka</h2>
+              <button onClick={() => handleShowTranslateCard('1')}>
+                Úroveň 1
+              </button>
+              <button onClick={() => handleShowTranslateCard('2')}>
+                Úroveň 2
+              </button>
+              <button onClick={() => handleShowTranslateCard('3')}>
+                Úroveň 3
+              </button>
+            </>
+          )}
+          {showTranslateCard && (
+            <TranslateCard
+              onShowPopup={handleShowPopup}
+              onShowTranslateCard={handleShowTranslateCard}
+              randomWordObject={randomWordObject}
+            />
+          )}
         </PopupWindow>
 
         <div className="play-area">
           <Button
-            onClick={handleShowWord}
+            onClick={handleShowWordLevel}
             nameOfClass="difficulty-choice"
             textContent="Hraj!"
           />
