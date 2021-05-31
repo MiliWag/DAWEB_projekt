@@ -12,12 +12,14 @@ const NumberOfPlayers = ({ onNextStep, onNumberOfPlayers }) => {
       <label className="number-of-players" htmlFor="players-number">
         Zvolte počet hráčů:
       </label>
+
       <select
         onChange={handleChange}
         id="players-number"
         className="number-of-players-select"
         name="number-of-players"
       >
+        <option value=""></option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>

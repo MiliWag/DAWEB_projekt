@@ -10,7 +10,7 @@ const ScoreOverview = ({ testPlayerData }) => {
           {testPlayerData.map((player) => (
             <Player
               key={player.id}
-              point="20"
+              point={player.point}
               name={player.name}
               color={`player__color ` + player.color}
             />

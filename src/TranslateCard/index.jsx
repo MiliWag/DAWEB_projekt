@@ -9,21 +9,21 @@ const TranslateCard = ({
 }) => {
   const [message, setMessage] = useState('');
   const [isQuestionEvaluated, setIsQuestionEvaluated] = useState(false);
+  const [playerScore, setPlayerScore] = useState(0);
 
   const isTranslationCorrect = () => {
     const translation = document.querySelector('#translation').value;
     return randomWordObject.en === translation;
   };
-  const addPointsToPlayer = () => {
-    const playerNumber = 1;
-    return randomWordObject.level;
-  };
+
   const evaluateQuestion = () => {
     console.log(isTranslationCorrect());
-    console.log(addPointsToPlayer());
     if (isTranslationCorrect()) {
       setMessage('✅ Správně');
-      console.log(isQuestionEvaluated);
+      let newPlayerScore = playerScore + 1;
+      setPlayerScore(newPlayerScore);
+      console.log(newPlayerScore);
+      console.log(Number(randomWordObject.level));
     } else {
       setMessage('❌ Špatně');
       console.log(isQuestionEvaluated);
@@ -49,17 +49,13 @@ const TranslateCard = ({
               name="translation"
             />
             {/*{randomWordObject.en}*/}
-            <Button
-              onClick={evaluateQuestion}
-              nameOfClass="button button--primary medium"
-              link="#"
-              textContent="Zkontroluj"
-            />
+            <button onClick={evaluateQuestion}> Zkontroluj</button>
           </>
         )}
+
         {isQuestionEvaluated && (
           <>
-            {message}
+            {message}, Získáváš: {playerScore}
             <br />
             {randomWordObject.en}
             {randomWordObject.en_2 && ', ' + randomWordObject.en_2}
@@ -70,8 +66,11 @@ const TranslateCard = ({
               onClick={goBack}
               nameOfClass="button button--primary medium"
               link="#"
-              textContent="Zpět"
+              textContent="Hraj dál"
             />
+            <button onClick={() => setPlayerScore(playerScore + 1)}>
+              Přičti skóre
+            </button>
           </>
         )}
       </div>

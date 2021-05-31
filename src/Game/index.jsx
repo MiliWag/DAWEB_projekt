@@ -53,7 +53,7 @@ const Game = ({ testPlayerData }) => {
 
       <div className="score-board">
         <WhoPlays color="who-play__color" />
-        {/*  <ScoreOverview testPlayerData={testPlayerData} /> */}
+        <ScoreOverview testPlayerData={testPlayerData} />
       </div>
 
       <Footer />
