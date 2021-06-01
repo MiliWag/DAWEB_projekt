@@ -30,7 +30,7 @@ const HomePage = ({ onIsGameSet, onGamePlayerData }) => {
   return (
     <>
       <img
-        src="../img/slovickomat_obdelnik.svg"
+        src="../img/slovickomat_logo_robot.svg"
         alt="homepage-logo"
         className="homepage-logo"
       />

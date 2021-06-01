@@ -56,6 +56,15 @@
 }
 
 .answer-img {
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 5rem;
+}
+
+.answer-text {
+  font-size: 2.5rem;
+}
+
+.answer-score {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
 }

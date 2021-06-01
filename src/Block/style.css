@@ -16,8 +16,7 @@
 }
 
 @media screen and (min-width: 865px) {
-  .block--game {
-    margin: 1rem;
+  .block {
     width: 70%;
   }
 }

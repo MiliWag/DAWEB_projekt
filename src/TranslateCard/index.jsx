@@ -32,15 +32,14 @@ const TranslateCard = ({
     console.log(isTranslationCorrect());
     if (isTranslationCorrect()) {
       setMessage('Správně');
-      setImgUrl('./img/good.svg');
+      setImgUrl('./img/robot_spravne.svg');
       setPoints('Přičítáš si ' + Number(randomWordObject.level) + ' bod/y');
 
       onPlayerScore(Number(randomWordObject.level));
     } else {
       setMessage('Špatně');
-      setImgUrl('../img/wrong.svg');
+      setImgUrl('../img/robot_spatne.svg');
       setPoints('Přičítáš si 0 bodů');
-      console.log(isQuestionEvaluated);
     }
     setIsQuestionEvaluated(true);
   };
@@ -49,6 +48,8 @@ const TranslateCard = ({
     onShowPopup();
     onShowTranslateCard();
   };
+
+  const rightAnswerText = 'Správná odpověď: ';
 
   return (
     <>
@@ -77,16 +78,16 @@ const TranslateCard = ({
         {isQuestionEvaluated && (
           <>
             <img className="answer-img" src={imgUrl} alt="answer-img" />
-            {message}
-            <br />
-            {points}
-            <br />
-            Správná odpověď:
-            {randomWordObject.en}
-            {randomWordObject.en_2 && ', ' + randomWordObject.en_2}
-            {randomWordObject.en_3 && ', ' + randomWordObject.en_3}
-            {randomWordObject.en_4 && ', ' + randomWordObject.en_4}
-            {randomWordObject.en_5 && ', ' + randomWordObject.en_5}
+            <span className="answer-text">{message}</span>
+            <p className="answer-score">{points}</p>
+            <p>
+              {rightAnswerText}
+              {randomWordObject.en}
+              {randomWordObject.en_2 && ', ' + randomWordObject.en_2}
+              {randomWordObject.en_3 && ', ' + randomWordObject.en_3}
+              {randomWordObject.en_4 && ', ' + randomWordObject.en_4}
+              {randomWordObject.en_5 && ', ' + randomWordObject.en_5}
+            </p>
             <Button
               onClick={goBack}
               nameOfClass="button button--primary medium"

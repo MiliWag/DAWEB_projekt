@@ -46,7 +46,7 @@ const Header = ({
       <header className="header">
         <a className="logo" href="index.html">
           <img
-            src="../img/slovickomat_obdelnik.svg"
+            src="../img/slovickomat_logo_robot.svg"
             alt="game-logo"
             className="game-logo"
           />
