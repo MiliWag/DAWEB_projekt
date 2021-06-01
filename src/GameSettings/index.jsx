@@ -6,6 +6,7 @@ const GameSettings = ({ onShowPopup, onIsGameSet, onTestPlayerData }) => {
   const [numberOfPlayers, setNumberOfPlayers] = useState(0);
   const [step, setStep] = useState(0);
   const [playerData, setPlayerData] = useState([]);
+
   onTestPlayerData(playerData);
   const handlePlayerData = (object) => {
     playerData.push(object);

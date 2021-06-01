@@ -6,10 +6,10 @@ const TranslateCard = ({
   randomWordObject,
   onShowPopup,
   onShowTranslateCard,
+  onPlayerScore,
 }) => {
   const [message, setMessage] = useState('');
   const [isQuestionEvaluated, setIsQuestionEvaluated] = useState(false);
-  const [playerScore, setPlayerScore] = useState(0);
 
   const isTranslationCorrect = () => {
     const translation = document.querySelector('#translation').value;
@@ -20,9 +20,9 @@ const TranslateCard = ({
     console.log(isTranslationCorrect());
     if (isTranslationCorrect()) {
       setMessage('✅ Správně');
-      let newPlayerScore = playerScore + 1;
+      /*   let newPlayerScore = playerScore + 1;
       setPlayerScore(newPlayerScore);
-      console.log(newPlayerScore);
+      console.log(newPlayerScore); */
       console.log(Number(randomWordObject.level));
     } else {
       setMessage('❌ Špatně');
@@ -34,6 +34,7 @@ const TranslateCard = ({
   const goBack = () => {
     onShowPopup();
     onShowTranslateCard();
+    onPlayerScore();
   };
   return (
     <>
@@ -55,7 +56,7 @@ const TranslateCard = ({
 
         {isQuestionEvaluated && (
           <>
-            {message}, Získáváš: {playerScore}
+            {message}, Získáváš: {Number(randomWordObject.level)} bod/y
             <br />
             {randomWordObject.en}
             {randomWordObject.en_2 && ', ' + randomWordObject.en_2}
