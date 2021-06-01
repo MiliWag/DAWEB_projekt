@@ -7,7 +7,7 @@ import Rules from '../Rules/index';
 import PlayerCard from '../PlayerCard';
 import GameSettings from '../GameSettings';
 
-const HomePage = ({ onIsGameSet, onTestPlayerData }) => {
+const HomePage = ({ onIsGameSet, onGamePlayerData }) => {
   const [showPopup, setShowPopup] = useState(false);
   const [showRules, setShowRules] = useState(false);
   const [showGameSettings, setShowGameSettings] = useState(false);
@@ -41,7 +41,7 @@ const HomePage = ({ onIsGameSet, onTestPlayerData }) => {
           <GameSettings
             onShowPopup={handleShowPopup}
             onIsGameSet={onIsGameSet}
-            onTestPlayerData={onTestPlayerData}
+            onGamePlayerData={onGamePlayerData}
           />
         )}
       </PopupWindow>

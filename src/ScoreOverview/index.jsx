@@ -2,16 +2,16 @@ import React from 'react';
 import './style.css';
 import Player from '../Player/index';
 
-const ScoreOverview = ({ testPlayerData, playerScore }) => {
+const ScoreOverview = ({ gamePlayerData, playerScore }) => {
   return (
     <>
       <div className="score-overview">
         <div className="score-overview__players">
-          {testPlayerData.map((player) => (
+          {gamePlayerData.map((player) => (
             <Player
               key={player.id}
               name={player.name}
-              score={player.score}
+              score={playerScore}
               color={`player__color ` + player.color}
             />
           ))}

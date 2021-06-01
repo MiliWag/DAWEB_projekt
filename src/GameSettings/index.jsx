@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import NumberOfPlayers from '../NumberOfPlayers/index';
 import PlayerCard from '../PlayerCard/index';
 
-const GameSettings = ({ onShowPopup, onIsGameSet, onTestPlayerData }) => {
+const GameSettings = ({ onShowPopup, onIsGameSet, onGamePlayerData }) => {
   const [numberOfPlayers, setNumberOfPlayers] = useState(0);
   const [step, setStep] = useState(0);
   const [playerData, setPlayerData] = useState([]);
 
-  onTestPlayerData(playerData);
+  onGamePlayerData(playerData);
   const handlePlayerData = (object) => {
     playerData.push(object);
     setPlayerData(playerData);

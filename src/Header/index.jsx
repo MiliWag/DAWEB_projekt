@@ -8,12 +8,16 @@ import PopupWindow from '../PopupWindow/index';
 import Rules from '../Rules/index';
 import TranslateCard from '../TranslateCard';
 
-const Header = ({ testPlayerData, onRandomWord, randomWordObject }) => {
+const Header = ({
+  gamePlayerData,
+  onRandomWord,
+  randomWordObject,
+  onPlayerScore,
+}) => {
   const [showPopup, setShowPopup] = useState(false);
   const [showRules, setShowRules] = useState(false);
   const [showTranslateCard, setShowTranslateCard] = useState(false);
   const [showWordLevel, setShowWordLevel] = useState(false);
-  const [playerScore, setPlayerScore] = useState(0);
 
   const handleShowPopup = () => setShowPopup(!showPopup);
 
@@ -33,12 +37,7 @@ const Header = ({ testPlayerData, onRandomWord, randomWordObject }) => {
     setShowWordLevel(!showWordLevel);
   };
 
-  const handlePlayerScore = () => {
-    setPlayerScore(playerScore + Number(randomWordObject.level));
-  };
-
   console.log(showWordLevel);
-  console.log(playerScore);
 
   const popupWindowClass = showPopup ? 'popup-window' : 'popup-window hidden';
 
@@ -83,7 +82,7 @@ const Header = ({ testPlayerData, onRandomWord, randomWordObject }) => {
               onShowPopup={handleShowPopup}
               onShowTranslateCard={handleShowTranslateCard}
               randomWordObject={randomWordObject}
-              onPlayerScore={handlePlayerScore}
+              onPlayerScore={onPlayerScore}
             />
           )}
         </PopupWindow>

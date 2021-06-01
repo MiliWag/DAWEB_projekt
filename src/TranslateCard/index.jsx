@@ -15,7 +15,17 @@ const TranslateCard = ({
 
   const isTranslationCorrect = () => {
     const translation = document.querySelector('#translation').value;
-    return randomWordObject.en === translation;
+    if (
+      translation === randomWordObject.en ||
+      translation === randomWordObject.en_2 ||
+      translation === randomWordObject.en_3 ||
+      translation === randomWordObject.en_4 ||
+      translation === randomWordObject.en_5
+    ) {
+      return true;
+    } else {
+      return false;
+    }
   };
 
   const evaluateQuestion = () => {
@@ -24,8 +34,8 @@ const TranslateCard = ({
       setMessage('Správně');
       setImgUrl('./img/good.svg');
       setPoints('Přičítáš si ' + Number(randomWordObject.level) + ' bod/y');
-      console.log(Number(randomWordObject.level));
-      onPlayerScore();
+
+      onPlayerScore(Number(randomWordObject.level));
     } else {
       setMessage('Špatně');
       setImgUrl('../img/wrong.svg');
@@ -39,6 +49,7 @@ const TranslateCard = ({
     onShowPopup();
     onShowTranslateCard();
   };
+
   return (
     <>
       <div className="translate-card">

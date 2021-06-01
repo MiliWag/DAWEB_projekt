@@ -8,9 +8,9 @@ import Tabletop from 'tabletop';
 import WhoPlays from '../WhoPlays/index';
 import ScoreOverview from '../ScoreOverview/index';
 
-const Game = ({ testPlayerData }) => {
+const Game = ({ gamePlayerData }) => {
   const [vocabularyData, setVocabularyData] = useState([]);
-  /*  const [playerScore, setPlayerScore] = useState(0); */
+  const [playerScore, setPlayerScore] = useState(0);
   const [randomWord, setRandomWord] = useState({
     id: '',
     level: '',
@@ -44,23 +44,26 @@ const Game = ({ testPlayerData }) => {
     setRandomWord(getRandomWordObject(level));
   };
 
-  /*  const handlePlayerScore = () => {
-    setPlayerScore(playerScore + Number(randomWordObject.level));
+  const handlePlayerScore = (number) => {
+    setPlayerScore(playerScore + number);
   };
-  console.log(playerScore); */
+  console.log(playerScore);
   // const randomWordCZ = randomWord.cz;
   return (
     <>
       <Header
         randomWordObject={randomWord}
         onRandomWord={handleRandomWord}
-        testPlayerData={testPlayerData}
-        /*  onPlayerScore={handlePlayerScore} */
+        gamePlayerData={gamePlayerData}
+        onPlayerScore={handlePlayerScore}
       />
 
       <div className="score-board">
         <WhoPlays color="who-play__color" />
-        <ScoreOverview testPlayerData={testPlayerData} />
+        <ScoreOverview
+          gamePlayerData={gamePlayerData}
+          playerScore={playerScore}
+        />
       </div>
 
       <Footer />

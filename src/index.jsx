@@ -19,24 +19,24 @@ import HomePage from './Homepage/index';
 
 const App = ({ onPlayerScore }) => {
   const [isGameSet, setIsGameSet] = useState(false);
-  const [testPlayerData, setTestPlayerData] = useState([]);
+  const [gamePlayerData, setGamePlayerData] = useState([]);
 
   const handlePlayerScore = (playerScore) => {
     console.log('hráč má:' + playerScore);
   };
 
-  const handleTestPlayerData = (array) => {
-    setTestPlayerData(array);
+  const handleGamePlayerData = (array) => {
+    setGamePlayerData(array);
   };
 
   const handleIsGameSet = () => setIsGameSet(!isGameSet);
-  console.log(testPlayerData);
+  console.log(gamePlayerData);
   return (
     <>
       {isGameSet && (
         <Game
           onIsGameSet={handleIsGameSet}
-          testPlayerData={testPlayerData}
+          gamePlayerData={gamePlayerData}
           onPlayerScore={handlePlayerScore}
         />
       )}
@@ -45,7 +45,7 @@ const App = ({ onPlayerScore }) => {
         <Block>
           <HomePage
             onIsGameSet={handleIsGameSet}
-            onTestPlayerData={handleTestPlayerData}
+            onGamePlayerData={handleGamePlayerData}
           />
         </Block>
       )}
