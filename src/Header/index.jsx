@@ -58,13 +58,22 @@ const Header = ({ testPlayerData, onRandomWord, randomWordObject }) => {
           {showWordLevel && (
             <>
               <h2>Vyberte si obtížnost slovíčka</h2>
-              <button onClick={() => handleShowTranslateCard('1')}>
+              <button
+                className="btn-word-difficulty"
+                onClick={() => handleShowTranslateCard('1')}
+              >
                 Úroveň 1
               </button>
-              <button onClick={() => handleShowTranslateCard('2')}>
+              <button
+                className="btn-word-difficulty"
+                onClick={() => handleShowTranslateCard('2')}
+              >
                 Úroveň 2
               </button>
-              <button onClick={() => handleShowTranslateCard('3')}>
+              <button
+                className="btn-word-difficulty"
+                onClick={() => handleShowTranslateCard('3')}
+              >
                 Úroveň 3
               </button>
             </>

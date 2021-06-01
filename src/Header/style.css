@@ -25,6 +25,21 @@
   flex-direction: column;
 }
 
+.btn-word-difficulty {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #10497f;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.btn-word-difficulty:hover {
+  background-color: #6698bf;
+}
+
 @media screen and (min-width: 650px) and (max-width: 864px) {
   .score-board {
     width: 40%;

@@ -26,3 +26,36 @@
   text-align: center;
   border: solid 3px #10497f;
 }
+
+.button {
+  width: 12rem;
+  padding: 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
+  border: solid 3px #10497f;
+  border-radius: 15px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.button--primary {
+  background-color: #10497f;
+  color: white;
+  font-weight: bold;
+}
+
+.button--primary:hover {
+  background-color: #1669b6;
+  border-color: #1669b6;
+}
+
+.medium {
+  width: 10rem;
+  text-transform: none;
+}
+
+.answer-img {
+  width: 4rem;
+  height: 4rem;
+}

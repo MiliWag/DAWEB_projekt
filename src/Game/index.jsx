@@ -10,6 +10,7 @@ import ScoreOverview from '../ScoreOverview/index';
 
 const Game = ({ testPlayerData }) => {
   const [vocabularyData, setVocabularyData] = useState([]);
+  /*  const [playerScore, setPlayerScore] = useState(0); */
   const [randomWord, setRandomWord] = useState({
     id: '',
     level: '',
@@ -42,6 +43,11 @@ const Game = ({ testPlayerData }) => {
   const handleRandomWord = (level) => {
     setRandomWord(getRandomWordObject(level));
   };
+
+  /*  const handlePlayerScore = () => {
+    setPlayerScore(playerScore + Number(randomWordObject.level));
+  };
+  console.log(playerScore); */
   // const randomWordCZ = randomWord.cz;
   return (
     <>
@@ -49,6 +55,7 @@ const Game = ({ testPlayerData }) => {
         randomWordObject={randomWord}
         onRandomWord={handleRandomWord}
         testPlayerData={testPlayerData}
+        /*  onPlayerScore={handlePlayerScore} */
       />
 
       <div className="score-board">

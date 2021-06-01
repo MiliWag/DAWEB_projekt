@@ -1,13 +1,13 @@
 import React from 'react';
 import './style.css';
 
-const Player = ({ nameOfClass, color, classForScore, point, name }) => {
+const Player = ({ nameOfClass, color, classForScore, score, name }) => {
   return (
     <>
       <div className={`player ` + nameOfClass}>
         <div className={color}></div>
         <div className="player__score">
-          {point} <span className="player__points">bodů</span>
+          {score} <span className="player__points">bodů</span>
         </div>
         <div className="player__name">{name}</div>
       </div>

@@ -1,4 +1,8 @@
 /* --------------------------------------------------- player card --------------------------------------------*/
+form {
+  display: flex;
+  flex-direction: column;
+}
 
 .player-card {
   display: flex;

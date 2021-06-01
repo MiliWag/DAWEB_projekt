@@ -10,6 +10,8 @@ const TranslateCard = ({
 }) => {
   const [message, setMessage] = useState('');
   const [isQuestionEvaluated, setIsQuestionEvaluated] = useState(false);
+  const [imgUrl, setImgUrl] = useState('');
+  const [points, setPoints] = useState('');
 
   const isTranslationCorrect = () => {
     const translation = document.querySelector('#translation').value;
@@ -19,13 +21,15 @@ const TranslateCard = ({
   const evaluateQuestion = () => {
     console.log(isTranslationCorrect());
     if (isTranslationCorrect()) {
-      setMessage('✅ Správně');
-      /*   let newPlayerScore = playerScore + 1;
-      setPlayerScore(newPlayerScore);
-      console.log(newPlayerScore); */
+      setMessage('Správně');
+      setImgUrl('./img/good.svg');
+      setPoints('Přičítáš si ' + Number(randomWordObject.level) + ' bod/y');
       console.log(Number(randomWordObject.level));
+      onPlayerScore();
     } else {
-      setMessage('❌ Špatně');
+      setMessage('Špatně');
+      setImgUrl('../img/wrong.svg');
+      setPoints('Přičítáš si 0 bodů');
       console.log(isQuestionEvaluated);
     }
     setIsQuestionEvaluated(true);
@@ -34,7 +38,6 @@ const TranslateCard = ({
   const goBack = () => {
     onShowPopup();
     onShowTranslateCard();
-    onPlayerScore();
   };
   return (
     <>
@@ -50,14 +53,24 @@ const TranslateCard = ({
               name="translation"
             />
             {/*{randomWordObject.en}*/}
-            <button onClick={evaluateQuestion}> Zkontroluj</button>
+            <button
+              className="button button--primary medium"
+              onClick={evaluateQuestion}
+            >
+              {' '}
+              Zkontroluj
+            </button>
           </>
         )}
 
         {isQuestionEvaluated && (
           <>
-            {message}, Získáváš: {Number(randomWordObject.level)} bod/y
+            <img className="answer-img" src={imgUrl} alt="answer-img" />
+            {message}
             <br />
+            {points}
+            <br />
+            Správná odpověď:
             {randomWordObject.en}
             {randomWordObject.en_2 && ', ' + randomWordObject.en_2}
             {randomWordObject.en_3 && ', ' + randomWordObject.en_3}
@@ -69,9 +82,6 @@ const TranslateCard = ({
               link="#"
               textContent="Hraj dál"
             />
-            <button onClick={() => setPlayerScore(playerScore + 1)}>
-              Přičti skóre
-            </button>
           </>
         )}
       </div>

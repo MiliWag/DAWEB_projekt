@@ -17,9 +17,13 @@ import GameOver from './GameOver';
 import Game from './Game/index';
 import HomePage from './Homepage/index';
 
-const App = () => {
+const App = ({ onPlayerScore }) => {
   const [isGameSet, setIsGameSet] = useState(false);
   const [testPlayerData, setTestPlayerData] = useState([]);
+
+  const handlePlayerScore = (playerScore) => {
+    console.log('hráč má:' + playerScore);
+  };
 
   const handleTestPlayerData = (array) => {
     setTestPlayerData(array);
@@ -30,7 +34,11 @@ const App = () => {
   return (
     <>
       {isGameSet && (
-        <Game onIsGameSet={handleIsGameSet} testPlayerData={testPlayerData} />
+        <Game
+          onIsGameSet={handleIsGameSet}
+          testPlayerData={testPlayerData}
+          onPlayerScore={handlePlayerScore}
+        />
       )}
 
       {!isGameSet && (

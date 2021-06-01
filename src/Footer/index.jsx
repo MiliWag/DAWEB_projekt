@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <>
       <footer className="contact">
-        <p class="contact__text">Nobody is perfect. Objevili jste chybu?</p>
+        <p className="contact__text">Nobody is perfect. Objevili jste chybu?</p>
         <a
           href="mailto:padourkova.jindriska@gmail.com"
           className="contact__mail"

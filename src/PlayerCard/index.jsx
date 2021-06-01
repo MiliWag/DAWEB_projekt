@@ -24,6 +24,7 @@ const PlayerCard = ({
       id: playerNumber,
       name: playerName,
       color: playerColor,
+      score: 0,
     };
 
     onPlayerData(playerData);
