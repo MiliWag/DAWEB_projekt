@@ -8,7 +8,7 @@ import Tabletop from 'tabletop';
 import WhoPlays from '../WhoPlays/index';
 import ScoreOverview from '../ScoreOverview/index';
 
-const Game = ({ gamePlayerData }) => {
+const Game = ({ gamePlayerData, onUpdateGamePlayerData }) => {
   const [vocabularyData, setVocabularyData] = useState([]);
   const [playerScore, setPlayerScore] = useState(0);
   const [randomWord, setRandomWord] = useState({
@@ -21,6 +21,9 @@ const Game = ({ gamePlayerData }) => {
     en_4: '',
     en_5: '',
   });
+
+  const [currentPlayer, setCurrentPlayer] = useState(gamePlayerData[0]);
+  const numberOfPlayers = gamePlayerData.length;
 
   useEffect(() => {
     Tabletop.init({
@@ -47,8 +50,31 @@ const Game = ({ gamePlayerData }) => {
   const handlePlayerScore = (number) => {
     setPlayerScore(playerScore + number);
   };
-  console.log(playerScore);
-  // const randomWordCZ = randomWord.cz;
+
+  const handleCurrentPlayer = (playerId) => {
+    let playerNumber = numberOfPlayers < playerId ? 1 : playerId;
+    const playerObject = gamePlayerData.filter((item) => {
+      return item.id === playerNumber;
+    });
+    setCurrentPlayer(playerObject[0]);
+  };
+
+  const updatePlayerScore = (number) => {
+    console.log('Získané body: ' + number);
+    const newPlayerData = {
+      id: currentPlayer.id,
+      name: currentPlayer.name,
+      color: currentPlayer.color,
+      score: currentPlayer.score + number,
+    };
+    onUpdateGamePlayerData(newPlayerData);
+  };
+
+  const [finalPlayerScore, setFinalPlayerScore] = useState(0);
+  const finishGame = () => {
+    onShowGameOver();
+  };
+
   return (
     <>
       <Header
@@ -56,16 +82,21 @@ const Game = ({ gamePlayerData }) => {
         onRandomWord={handleRandomWord}
         gamePlayerData={gamePlayerData}
         onPlayerScore={handlePlayerScore}
+        currentPlayer={currentPlayer}
+        onCurrentPlayer={handleCurrentPlayer}
+        onUpdatePlayerScore={updatePlayerScore}
+        finalPlayerScore={finalPlayerScore}
+        onShowGameOver={onShowGameOver}
       />
 
       <div className="score-board">
-        <WhoPlays color="who-play__color" />
+        <WhoPlays currentPlayer={currentPlayer} />
         <ScoreOverview
           gamePlayerData={gamePlayerData}
           playerScore={playerScore}
         />
       </div>
-
+      <button onClick={() => setFinalPlayerScore(60)}>přičti</button>
       <Footer />
     </>
   );

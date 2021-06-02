@@ -3,9 +3,10 @@ import NumberOfPlayers from '../NumberOfPlayers/index';
 import PlayerCard from '../PlayerCard/index';
 
 const GameSettings = ({ onShowPopup, onIsGameSet, onGamePlayerData }) => {
-  const [numberOfPlayers, setNumberOfPlayers] = useState(0);
+  const [numberOfPlayers, setNumberOfPlayers] = useState();
   const [step, setStep] = useState(0);
   const [playerData, setPlayerData] = useState([]);
+  const colorsArray = [];
 
   onGamePlayerData(playerData);
   const handlePlayerData = (object) => {
@@ -46,6 +47,7 @@ const GameSettings = ({ onShowPopup, onIsGameSet, onGamePlayerData }) => {
           playerNumber={step}
           onNextStep={handleNextStep}
           onPreviousStep={handlePreviousStep}
+          playerDataObject={playerData}
         />
       )}
     </>

@@ -21,8 +21,15 @@ const App = ({ onPlayerScore }) => {
   const [isGameSet, setIsGameSet] = useState(false);
   const [gamePlayerData, setGamePlayerData] = useState([]);
 
-  const handlePlayerScore = (playerScore) => {
-    console.log('hráč má:' + playerScore);
+  const updateGamePlayerData = (playerObject) => {
+    console.log('Update GamePlayerData');
+    console.log(playerObject);
+    let playerId = playerObject.id;
+    setGamePlayerData(
+      gamePlayerData.map((item) => {
+        return item.id === playerId ? playerObject : item;
+      }),
+    );
   };
 
   const handleGamePlayerData = (array) => {
@@ -30,14 +37,14 @@ const App = ({ onPlayerScore }) => {
   };
 
   const handleIsGameSet = () => setIsGameSet(!isGameSet);
-  console.log(gamePlayerData);
+
   return (
     <>
       {isGameSet && (
         <Game
           onIsGameSet={handleIsGameSet}
           gamePlayerData={gamePlayerData}
-          onPlayerScore={handlePlayerScore}
+          onUpdateGamePlayerData={updateGamePlayerData}
         />
       )}
 

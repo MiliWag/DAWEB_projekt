@@ -9,6 +9,8 @@ const PlayerCard = ({
   onPreviousStep,
   playerNumber,
   onPlayerData,
+  colorsArray,
+  playerDataObject,
 }) => {
   const [nameOfPlayer, setNameOfPlayer] = useState();
 
@@ -33,6 +35,13 @@ const PlayerCard = ({
     e.target.reset();
   };
 
+  const includesColor = (colorClass) => {
+    return playerDataObject.some((item) => item.color === colorClass);
+  };
+
+  console.log('barvy');
+  console.log(includesColor);
+
   return (
     <>
       <div className="player-card">
@@ -41,6 +50,7 @@ const PlayerCard = ({
           <label htmlFor="input_for_name">
             Jméno:
             <input
+              required
               className="input-for-name"
               id="input_for_name"
               type="text"
@@ -51,6 +61,8 @@ const PlayerCard = ({
           <div className="player-color">
             <label htmlFor="player_color_three">
               <input
+                required
+                disabled={includesColor('player-color-yellow')}
                 className="player-color-yellow"
                 id="player_color_three"
                 type="radio"
@@ -60,6 +72,8 @@ const PlayerCard = ({
             </label>
             <label htmlFor="player_color_one">
               <input
+                required
+                disabled={includesColor('player-color-red')}
                 className="player-color-red"
                 id="player_color_one"
                 type="radio"
@@ -69,6 +83,8 @@ const PlayerCard = ({
             </label>
             <label htmlFor="player_color_two">
               <input
+                required
+                disabled={includesColor('player-color-blue')}
                 className="player-color-blue"
                 id="player_color_two"
                 type="radio"
@@ -78,6 +94,8 @@ const PlayerCard = ({
             </label>
             <label htmlFor="player_color_four">
               <input
+                required
+                disabled={includesColor('player-color-green')}
                 className="player-color-green"
                 id="player_color_four"
                 type="radio"

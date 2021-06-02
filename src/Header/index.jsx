@@ -7,18 +7,29 @@ import ScoreOverview from '../ScoreOverview';
 import PopupWindow from '../PopupWindow/index';
 import Rules from '../Rules/index';
 import TranslateCard from '../TranslateCard';
+import GameOver from '../GameOver';
 
 const Header = ({
   gamePlayerData,
   onRandomWord,
   randomWordObject,
   onPlayerScore,
+  currentPlayer,
+  onCurrentPlayer,
+  onUpdatePlayerScore,
+  finalPlayerScore,
+  onShowGameOver,
 }) => {
   const [showPopup, setShowPopup] = useState(false);
   const [showRules, setShowRules] = useState(false);
   const [showTranslateCard, setShowTranslateCard] = useState(false);
   const [showWordLevel, setShowWordLevel] = useState(false);
+  const [showGameOver, setShowGameOver] = useState(false);
 
+  const handleShowGameOver = () => {
+    setShowGameOver(!setShowGameOver);
+    setShowPopup(!showPopup);
+  };
   const handleShowPopup = () => setShowPopup(!showPopup);
 
   const handleShowRules = () => {
@@ -38,6 +49,15 @@ const Header = ({
   };
 
   console.log(showWordLevel);
+
+  const isGameOver = (number) => {
+    if (number >= 60) {
+      setShowPopup(!showPopup);
+      return true;
+    }
+    return false;
+  };
+  console.log(isGameOver(finalPlayerScore));
 
   const popupWindowClass = showPopup ? 'popup-window' : 'popup-window hidden';
 
@@ -83,8 +103,12 @@ const Header = ({
               onShowTranslateCard={handleShowTranslateCard}
               randomWordObject={randomWordObject}
               onPlayerScore={onPlayerScore}
+              currentPlayer={currentPlayer}
+              onCurrentPlayer={onCurrentPlayer}
+              onUpdatePlayerScore={onUpdatePlayerScore}
             />
           )}
+          {showGameOver && <GameOver gamePlayerData={gamePlayerData} />}
         </PopupWindow>
 
         <div className="play-area">

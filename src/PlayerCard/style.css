@@ -44,6 +44,10 @@ form {
   border: solid 4px #2f2a22;
 }
 
+.player-color input:disabled {
+  background-color: grey;
+}
+
 .player-color-yellow {
   background-color: #f7e135;
 }

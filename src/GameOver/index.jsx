@@ -3,7 +3,7 @@ import './style.css';
 import ScoreOverview from '../ScoreOverview/index';
 import Button from '../Button/index';
 
-const GameOver = ({ winner }) => {
+const GameOver = ({ winner, gamePlayerData }) => {
   return (
     <>
       <div className="game-over">
@@ -15,7 +15,7 @@ const GameOver = ({ winner }) => {
         />
         <p className="winner">Vítěz je {winner}!</p>
 
-        <ScoreOverview />
+        <ScoreOverview gamePlayerData={gamePlayerData} />
         <div className="game-over-buttons">
           <Button
             nameOfClass="button button--primary light"

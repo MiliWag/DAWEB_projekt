@@ -7,6 +7,9 @@ const TranslateCard = ({
   onShowPopup,
   onShowTranslateCard,
   onPlayerScore,
+  currentPlayer,
+  onCurrentPlayer,
+  onUpdatePlayerScore,
 }) => {
   const [message, setMessage] = useState('');
   const [isQuestionEvaluated, setIsQuestionEvaluated] = useState(false);
@@ -35,13 +38,14 @@ const TranslateCard = ({
       setImgUrl('./img/robot_spravne.svg');
       setPoints('Přičítáš si ' + Number(randomWordObject.level) + ' bod/y');
 
-      onPlayerScore(Number(randomWordObject.level));
+      onUpdatePlayerScore(Number(randomWordObject.level));
     } else {
       setMessage('Špatně');
       setImgUrl('../img/robot_spatne.svg');
       setPoints('Přičítáš si 0 bodů');
     }
     setIsQuestionEvaluated(true);
+    onCurrentPlayer(Number(currentPlayer.id) + 1);
   };
 
   const goBack = () => {
@@ -59,6 +63,7 @@ const TranslateCard = ({
             <span className="translate-card__word">{randomWordObject.cz}</span>
             <span className="translate-card__text">Napiš překlad:</span>
             <input
+              required
               className="translate-card__translation"
               type="text"
               id="translation"
