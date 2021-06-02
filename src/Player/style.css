@@ -11,7 +11,7 @@
 
 .player {
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -37,24 +37,7 @@
   background-color: #5f8731;
 }
 
-.player__name {
-  display: none;
-}
-
-.player__points {
-  display: none;
-}
-
-@media screen and (min-width: 865px) {
-  .player__name {
-    display: block;
-  }
-
-  .player__points {
-    display: inline-block;
-  }
-
-  .player {
-    flex-direction: row;
-  }
+.player__progress {
+  color: #10497f;
+  height: 2rem;
 }

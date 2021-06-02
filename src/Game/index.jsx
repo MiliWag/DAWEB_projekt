@@ -59,11 +59,6 @@ const Game = ({ gamePlayerData }) => {
       />
 
       <div className="score-board">
-        <img
-          className="img-score-board"
-          src="../img/robot_na_skore.svg"
-          alt="robot_na_skore"
-        />
         <WhoPlays color="who-play__color" />
         <ScoreOverview
           gamePlayerData={gamePlayerData}

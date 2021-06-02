@@ -7,13 +7,7 @@
 }
 .score-overview__players {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
   justify-content: space-around;
-}
-
-@media screen and (min-width: 865px) {
-  .score-overview__players {
-    flex-direction: column;
-  }
 }

@@ -10,6 +10,9 @@ const Player = ({ nameOfClass, color, classForScore, score, name }) => {
           {score} <span className="player__points">bodů</span>
         </div>
         <div className="player__name">{name}</div>
+        <progress className="player__progress" value={score} max="60">
+          {score}
+        </progress>
       </div>
     </>
   );

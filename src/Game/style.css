@@ -27,12 +27,6 @@
   margin-bottom: 0;
 }
 
-.img-score-board {
-  width: 4rem;
-  height: 4rem;
-  align-self: flex-end;
-}
-
 .header {
   display: flex;
   justify-content: space-around;
@@ -41,6 +35,7 @@
 }
 
 .score-board {
+  position: relative;
   background-color: #f5ebe0;
   display: flex;
   flex-direction: column;
