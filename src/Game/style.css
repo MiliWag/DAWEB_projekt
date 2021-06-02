@@ -11,7 +11,6 @@
   width: 10rem;
   border-radius: 10px;
   padding: 0.2rem;
-
   box-shadow: 5px 10px 15px black;
 }
 
@@ -25,23 +24,29 @@
 
 .contact__text {
   margin-bottom: 0;
+  margin-top: 0;
 }
 
 .header {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  justify-content: space-between;
   margin-bottom: 1rem;
+  align-items: center;
+}
+
+.header:last-child {
+  flex-wrap: wrap;
 }
 
 .score-board {
+  margin: auto;
   position: relative;
   background-color: #f5ebe0;
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
+  padding: 0.5rem 0.5rem 3rem 0.5rem;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 5px 10px 15px black;
 }
 
@@ -55,12 +60,27 @@
   flex-direction: column;
 }
 
+.choose-word-difficulty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.header-word-difficulty {
+  color: #f5ebe0;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
 .btn-word-difficulty {
+  width: 10rem;
   font-family: 'Quicksand', sans-serif;
   font-size: 1.2rem;
   color: white;
   background-color: #10497f;
-  border: none;
+  border: solid 2px white;
   border-radius: 10px;
   margin-bottom: 1rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
@@ -70,24 +90,44 @@
   background-color: #6698bf;
 }
 
+.choose-word-difficulty-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
 @media screen and (min-width: 576px) and (max-width: 767px) {
   .header {
-    margin-bottom: 2rem;
+    margin: 0 auto 1rem auto;
+    width: 80%;
   }
 
   .score-board {
-    width: 100%;
+    width: 80%;
   }
 
   .play-area {
     flex-direction: row;
     width: 60%;
   }
+
+  .choose-word-difficulty-buttons {
+    flex-direction: row;
+    margin-left: 2rem;
+  }
+
+  .last {
+    margin-right: 0;
+  }
+
+  .btn-word-difficulty {
+    margin-right: 1rem;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .header {
-    margin-bottom: 3rem;
+    margin: 0 auto 2rem auto;
+    width: 70%;
   }
 
   .board {
@@ -97,21 +137,16 @@
   }
 
   .score-board {
-    display: flex;
-    flex-direction: column;
-    background-color: #f5ebe0;
-    padding: 1rem;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-    box-shadow: 5px 10px 15px black;
-  }
-
-  .score-board:last-child {
-    justify-content: flex-end;
+    width: 70%;
   }
 
   .play-area {
     flex-direction: row;
+  }
+
+  .header-word-difficulty {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .game {
@@ -124,5 +159,29 @@
 
   .contact {
     margin: auto;
+  }
+
+  .choose-word-difficulty-buttons {
+    flex-direction: row;
+    margin-left: 2rem;
+  }
+
+  .btn-word-difficulty {
+    margin-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .header {
+    width: 50%;
+  }
+
+  .score-board {
+    width: 50%;
+    padding: 0.5rem 1.5rem 4rem 1.5rem;
+  }
+
+  .btn-word-difficulty {
+    margin-right: 3rem;
   }
 }

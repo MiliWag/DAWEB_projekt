@@ -15,7 +15,13 @@
   padding-top: 1rem;
 }
 
-@media screen and (min-width: 865px) {
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .block {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 768px) {
   .block {
     width: 70%;
   }

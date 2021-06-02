@@ -22,7 +22,7 @@ yellow - #F7E135; */
 font-family: 'Quicksand', sans-serif; */
 
 body {
-  background-color: #544b3d;
+  background-color: #332727;
   margin: 0;
 }
 
@@ -50,6 +50,7 @@ button {
 
 .homepage {
   font-family: 'Quicksand', sans-serif;
+  margin: auto;
 }
 
 .homepage-logo {
@@ -70,23 +71,4 @@ button {
   flex-direction: column;
   align-items: center;
   margin-bottom: 2rem;
-}
-
-@media screen and (min-width: 650px) and (max-width: 864px) {
-  /*------------------------------homepage---------------------------*/
-  .homepage {
-    width: 85%;
-    margin: auto;
-  }
-
-  /*--------------------------------------------- game -------------------*/
-}
-
-@media screen and (min-width: 865px) {
-  /*--------------------------------- homepage ---------------------------*/
-  .homepage {
-    margin-top: 1rem;
-
-    margin: auto;
-  }
 }

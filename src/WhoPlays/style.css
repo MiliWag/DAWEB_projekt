@@ -4,8 +4,8 @@
 }
 
 .who-plays__text {
-  text-transform: uppercase;
   margin: 0 0.5rem 0 0;
+  font-weight: bold;
 }
 
 .who-plays__color {

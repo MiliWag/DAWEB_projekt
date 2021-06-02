@@ -62,6 +62,9 @@ const TranslateCard = ({
       <div className="translate-card">
         {!isQuestionEvaluated && (
           <>
+            <span className="translate-card-current-player">
+              Hraje: {currentPlayer.name}
+            </span>
             <span className="translate-card__word">{randomWordObject.cz}</span>
             <span className="translate-card__text">Napiš překlad:</span>
             <form onSubmit={evaluateQuestion}>
@@ -85,7 +88,7 @@ const TranslateCard = ({
             <img className="answer-img" src={imgUrl} alt="answer-img" />
             <span className="answer-text">{message}</span>
             <p className="answer-score">{points}</p>
-            <p>
+            <p className="right-answer-is">
               {rightAnswerText}
               {randomWordObject.en}
               {randomWordObject.en_2 && ', ' + randomWordObject.en_2}

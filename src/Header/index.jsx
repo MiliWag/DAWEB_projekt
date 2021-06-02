@@ -42,6 +42,7 @@ const Header = ({
     setShowRules(false);
     setShowWordLevel(false);
     onRandomWord(wordLevel);
+    setShowPopup(!showPopup);
   };
   const handleShowWordLevel = () => {
     setShowPopup(!showPopup);
@@ -73,31 +74,7 @@ const Header = ({
 
         <PopupWindow nameOfClass={popupWindowClass}>
           {showRules && <Rules onShowPopup={handleShowPopup} />}
-          {showWordLevel && (
-            <>
-              <h2 className="header-word-difficulty">
-                Vyberte si obtížnost slovíčka
-              </h2>
-              <button
-                className="btn-word-difficulty"
-                onClick={() => handleShowTranslateCard('1')}
-              >
-                Úroveň 1
-              </button>
-              <button
-                className="btn-word-difficulty"
-                onClick={() => handleShowTranslateCard('2')}
-              >
-                Úroveň 2
-              </button>
-              <button
-                className="btn-word-difficulty"
-                onClick={() => handleShowTranslateCard('3')}
-              >
-                Úroveň 3
-              </button>
-            </>
-          )}
+
           {showTranslateCard && (
             <TranslateCard
               onShowPopup={handleShowPopup}
@@ -112,19 +89,39 @@ const Header = ({
           {showGameOver && <GameOver gamePlayerData={gamePlayerData} />}
         </PopupWindow>
 
-        <div className="play-area">
-          <Button
-            onClick={handleShowWordLevel}
-            nameOfClass="difficulty-choice"
-            textContent="Hraj!"
-          />
-          <Button
-            onClick={handleShowRules}
-            nameOfClass="info-rules"
-            textContent="Pravidla"
-          />
-        </div>
+        <Button
+          onClick={handleShowRules}
+          nameOfClass="info-rules"
+          textContent="Pravidla"
+        />
       </header>
+      <>
+        <div className="choose-word-difficulty">
+          <h2 className="header-word-difficulty">
+            Vyber si obtížnost slovíčka:
+          </h2>
+          <div className="choose-word-difficulty-buttons">
+            <button
+              className="btn-word-difficulty"
+              onClick={() => handleShowTranslateCard('1')}
+            >
+              Úroveň 1
+            </button>
+            <button
+              className="btn-word-difficulty"
+              onClick={() => handleShowTranslateCard('2')}
+            >
+              Úroveň 2
+            </button>
+            <button
+              className="btn-word-difficulty last"
+              onClick={() => handleShowTranslateCard('3')}
+            >
+              Úroveň 3
+            </button>
+          </div>
+        </div>
+      </>
     </>
   );
 };

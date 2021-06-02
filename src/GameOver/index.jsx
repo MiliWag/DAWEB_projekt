@@ -9,7 +9,7 @@ const GameOver = ({ winner, gamePlayerData }) => {
       <div className="game-over">
         <h2>Konec hry</h2>
         <img
-          src="../img/celebration.svg"
+          src="../img/robot_vyhra.svg"
           alt="celebration"
           className="winner-img"
         />
