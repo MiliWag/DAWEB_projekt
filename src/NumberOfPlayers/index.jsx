@@ -14,7 +14,7 @@ const NumberOfPlayers = ({ onNextStep, onNumberOfPlayers }) => {
   };
   return (
     <>
-      <form onSubmit={numberOfPlayersSet}>
+      <form className="number-of-players-form" onSubmit={numberOfPlayersSet}>
         <label className="number-of-players" htmlFor="players-number">
           Zvolte počet hráčů:
         </label>

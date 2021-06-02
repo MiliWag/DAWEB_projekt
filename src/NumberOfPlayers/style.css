@@ -15,3 +15,7 @@
   border: solid 2px #10497f;
   border-radius: 2px;
 }
+
+.number-of-players-form {
+  align-items: center;
+}

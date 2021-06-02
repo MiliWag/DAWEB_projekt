@@ -57,7 +57,6 @@ const Header = ({
     }
     return false;
   };
-  console.log(isGameOver(finalPlayerScore));
 
   const popupWindowClass = showPopup ? 'popup-window' : 'popup-window hidden';
 
@@ -76,7 +75,9 @@ const Header = ({
           {showRules && <Rules onShowPopup={handleShowPopup} />}
           {showWordLevel && (
             <>
-              <h2>Vyberte si obtížnost slovíčka</h2>
+              <h2 className="header-word-difficulty">
+                Vyberte si obtížnost slovíčka
+              </h2>
               <button
                 className="btn-word-difficulty"
                 onClick={() => handleShowTranslateCard('1')}

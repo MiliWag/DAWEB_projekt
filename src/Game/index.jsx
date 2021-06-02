@@ -8,7 +8,7 @@ import Tabletop from 'tabletop';
 import WhoPlays from '../WhoPlays/index';
 import ScoreOverview from '../ScoreOverview/index';
 
-const Game = ({ gamePlayerData, onUpdateGamePlayerData }) => {
+const Game = ({ gamePlayerData, onUpdateGamePlayerData, onShowGameOver }) => {
   const [vocabularyData, setVocabularyData] = useState([]);
   const [playerScore, setPlayerScore] = useState(0);
   const [randomWord, setRandomWord] = useState({

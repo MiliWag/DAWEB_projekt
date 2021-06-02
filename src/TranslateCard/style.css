@@ -18,6 +18,10 @@
   margin-bottom: 0.5rem;
 }
 
+.translate-card form {
+  align-items: center;
+}
+
 .translate-card__translation {
   color: #544b3d;
   width: 13.5rem;

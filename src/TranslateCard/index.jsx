@@ -17,13 +17,15 @@ const TranslateCard = ({
   const [points, setPoints] = useState('');
 
   const isTranslationCorrect = () => {
-    const translation = document.querySelector('#translation').value;
+    const translation = document
+      .querySelector('#translation')
+      .value.toLowerCase();
     if (
-      translation === randomWordObject.en ||
-      translation === randomWordObject.en_2 ||
-      translation === randomWordObject.en_3 ||
-      translation === randomWordObject.en_4 ||
-      translation === randomWordObject.en_5
+      translation === randomWordObject.en.toLowerCase() ||
+      translation === randomWordObject.en_2.toLowerCase() ||
+      translation === randomWordObject.en_3.toLowerCase() ||
+      translation === randomWordObject.en_4.toLowerCase() ||
+      translation === randomWordObject.en_5.toLowerCase()
     ) {
       return true;
     } else {
@@ -62,21 +64,19 @@ const TranslateCard = ({
           <>
             <span className="translate-card__word">{randomWordObject.cz}</span>
             <span className="translate-card__text">Napiš překlad:</span>
-            <input
-              required
-              className="translate-card__translation"
-              type="text"
-              id="translation"
-              name="translation"
-            />
-            {/*{randomWordObject.en}*/}
-            <button
-              className="button button--primary medium"
-              onClick={evaluateQuestion}
-            >
-              {' '}
-              Zkontroluj
-            </button>
+            <form onSubmit={evaluateQuestion}>
+              <input
+                required
+                className="translate-card__translation"
+                type="text"
+                id="translation"
+                name="translation"
+              />
+              {/*{randomWordObject.en}*/}
+              <button className="button button--primary medium" type="submit">
+                Zkontroluj
+              </button>
+            </form>
           </>
         )}
 
