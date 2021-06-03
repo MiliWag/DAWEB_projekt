@@ -3,7 +3,10 @@ import './style.css';
 import ScoreOverview from '../ScoreOverview/index';
 import Button from '../Button/index';
 
-const GameOver = ({ winner, gamePlayerData }) => {
+const GameOver = ({ currentPlayer, gamePlayerData }) => {
+  const pageReload = () => {
+    location.reload();
+  };
   return (
     <>
       <div className="game-over">
@@ -13,18 +16,13 @@ const GameOver = ({ winner, gamePlayerData }) => {
           alt="celebration"
           className="winner-img"
         />
-        <p className="winner">Vítěz je {winner}!</p>
+        <p className="winner">Vítěz je {currentPlayer.name}!</p>
 
         <ScoreOverview gamePlayerData={gamePlayerData} />
         <div className="game-over-buttons">
           <Button
+            onClick={pageReload}
             nameOfClass="button button--primary light"
-            link="#"
-            textContent="Hrát znovu"
-          />
-          <Button
-            nameOfClass="button button--secondary lighter"
-            link="index.html"
             textContent="Domů"
           />
         </div>

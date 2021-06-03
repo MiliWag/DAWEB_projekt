@@ -149,6 +149,10 @@ button {
   text-transform: none;
 }
 
+.standard {
+  text-transform: none;
+}
+
 @media screen and (min-width: 576px) and (max-width: 767px) {
   .difficulty-choice {
     margin-right: 4rem;

@@ -98,9 +98,9 @@ const TranslateCard = ({
             </p>
             <Button
               onClick={goBack}
-              nameOfClass="button button--primary medium"
+              nameOfClass="button button--primary standard"
               link="#"
-              textContent="Hraj dál"
+              textContent="Zpět do hry"
             />
           </>
         )}

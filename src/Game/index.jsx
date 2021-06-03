@@ -7,6 +7,7 @@ import Footer from '../Footer/index';
 import Tabletop from 'tabletop';
 import WhoPlays from '../WhoPlays/index';
 import ScoreOverview from '../ScoreOverview/index';
+import GameOver from '../GameOver/index';
 
 const Game = ({ gamePlayerData, onUpdateGamePlayerData, onShowGameOver }) => {
   const [vocabularyData, setVocabularyData] = useState([]);
@@ -24,6 +25,36 @@ const Game = ({ gamePlayerData, onUpdateGamePlayerData, onShowGameOver }) => {
 
   const [currentPlayer, setCurrentPlayer] = useState(gamePlayerData[0]);
   const numberOfPlayers = gamePlayerData.length;
+  const [showPopup, setShowPopup] = useState(false);
+  const [showGameOver, setShowGameOver] = useState(false);
+
+  const [showRules, setShowRules] = useState(false);
+  const [showTranslateCard, setShowTranslateCard] = useState(false);
+  const [showWordLevel, setShowWordLevel] = useState(false);
+
+  const handleShowRules = () => {
+    setShowRules(!showRules);
+    handleShowPopup();
+  };
+
+  const handleShowTranslateCard = (wordLevel) => {
+    setShowTranslateCard(!showTranslateCard);
+    setShowRules(false);
+    setShowWordLevel(false);
+    handleRandomWord(wordLevel);
+    handleShowPopup();
+  };
+  const handleShowWordLevel = () => {
+    handleShowPopup();
+    setShowWordLevel(!showWordLevel);
+  };
+
+  const handleShowPopup = () => setShowPopup(!showPopup);
+
+  const handleShowGameOver = () => {
+    setShowGameOver(!showGameOver);
+    setShowTranslateCard(false);
+  };
 
   useEffect(() => {
     Tabletop.init({
@@ -68,25 +99,36 @@ const Game = ({ gamePlayerData, onUpdateGamePlayerData, onShowGameOver }) => {
       score: currentPlayer.score + number,
     };
     onUpdateGamePlayerData(newPlayerData);
+    if (newPlayerData.score >= 6) {
+      handleShowGameOver();
+      console.log('hra je ukončena');
+      console.log(newPlayerData);
+    }
   };
 
-  const [finalPlayerScore, setFinalPlayerScore] = useState(0);
-  const finishGame = () => {
-    onShowGameOver();
+  window.onbeforeunload = function () {
+    return 'Do you really want to leave our brilliant application?';
   };
 
   return (
     <>
       <Header
         randomWordObject={randomWord}
-        onRandomWord={handleRandomWord}
         gamePlayerData={gamePlayerData}
         onPlayerScore={handlePlayerScore}
         currentPlayer={currentPlayer}
         onCurrentPlayer={handleCurrentPlayer}
         onUpdatePlayerScore={updatePlayerScore}
-        finalPlayerScore={finalPlayerScore}
-        onShowGameOver={onShowGameOver}
+        handleShowGameOver={onShowGameOver}
+        onShowPopup={handleShowPopup}
+        showPopup={showPopup}
+        showGameOver={showGameOver}
+        onShowGameOver={handleShowGameOver}
+        showRules={showRules}
+        onShowRules={handleShowRules}
+        showTranslateCard={showTranslateCard}
+        onShowTranslateCard={handleShowTranslateCard}
+        showWordLevel={showWordLevel}
       />
 
       <div className="score-board">
@@ -96,7 +138,7 @@ const Game = ({ gamePlayerData, onUpdateGamePlayerData, onShowGameOver }) => {
           playerScore={playerScore}
         />
       </div>
-      <button onClick={() => setFinalPlayerScore(60)}>přičti</button>
+
       <Footer />
     </>
   );

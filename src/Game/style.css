@@ -24,7 +24,6 @@
 
 .contact__text {
   margin-bottom: 0;
-  margin-top: 0;
 }
 
 .header {
@@ -39,6 +38,7 @@
 }
 
 .score-board {
+  color: #10497f;
   margin: auto;
   position: relative;
   background-color: #f5ebe0;
@@ -87,7 +87,7 @@
 }
 
 .btn-word-difficulty:hover {
-  background-color: #6698bf;
+  background-color: #1669b6;
 }
 
 .choose-word-difficulty-buttons {

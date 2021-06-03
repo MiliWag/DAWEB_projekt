@@ -11,6 +11,7 @@
 }
 
 .player {
+  color: #10497f;
   display: flex;
   justify-content: space-around;
   align-items: center;
