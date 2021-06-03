@@ -21,6 +21,7 @@ const Header = ({
   onShowRules,
   showTranslateCard,
   onShowTranslateCard,
+  winner,
 }) => {
   const popupWindowClass = showPopup ? 'popup-window' : 'popup-window hidden';
 
@@ -53,6 +54,7 @@ const Header = ({
             <GameOver
               gamePlayerData={gamePlayerData}
               currentPlayer={currentPlayer}
+              winner={winner}
             />
           )}
         </PopupWindow>
@@ -83,7 +85,7 @@ const Header = ({
             </button>
             <button
               className="btn-word-difficulty last"
-              onClick={() => onShowTranslateCard('3')}
+              onClick={() => onShowTranslateCard('5')}
             >
               Úroveň 3
             </button>

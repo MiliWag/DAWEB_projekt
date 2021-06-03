@@ -78,15 +78,16 @@ button {
 
 .info-rules {
   font-family: 'Quicksand', sans-serif;
-  background: none;
-  border: none;
+  background-color: #10497f;
   color: #e6e5e1;
   font-size: 1rem;
-  padding: 0;
+  padding: 1rem;
+  border-radius: 15px;
+  border: solid 2px white;
 }
 
 .info-rules:hover {
-  color: #ebd8c2;
+  background-color: #1669b6;
 }
 
 .contact__mail {

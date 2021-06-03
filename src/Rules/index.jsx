@@ -25,7 +25,7 @@ const Rules = ({ onShowPopup }) => {
           <li className="rules-structure__item">
             Pokud je jeho odpověď správná, Slovíčkomat automaticky přičte body
             podle zvolené obtížnosti: Úroveň 1 – 1 bod, Úroveň 2 – 2 body,
-            Úroveň 3 – 3 body.
+            Úroveň 3 – 5 bodů.
           </li>
           <li className="rules-structure__item">
             Pokud je odpověď špatně, připisuje si hráč 0 bodů.

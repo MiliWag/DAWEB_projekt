@@ -2,18 +2,6 @@ import React, { useState } from 'react';
 import { render } from 'react-dom';
 import './style.css';
 import Block from './Block/index';
-import Homepage from './Homepage/index';
-import Button from './Button/index';
-import PopupWindow from './PopupWindow/index';
-import NumberOfPlayers from './NumberOfPlayers/index';
-import PlayerCard from './PlayerCard/index';
-import Rules from './Rules/index';
-import Difficulty from './Difficulty/index';
-import TranslateCard from './TranslateCard/index';
-import RightAnswer from './RightAnswer/index';
-import WrongAnswer from './WrongAnswer/index';
-import ScoreOverview from './ScoreOverview/index';
-import GameOver from './GameOver';
 import Game from './Game/index';
 import HomePage from './Homepage/index';
 

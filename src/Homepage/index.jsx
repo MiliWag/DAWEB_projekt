@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import '../style.css';
 import Button from '../Button/index';
 import PopupWindow from '../PopupWindow/index';
-import NumberOfPlayers from '../NumberOfPlayers';
 import Rules from '../Rules/index';
-import PlayerCard from '../PlayerCard';
 import GameSettings from '../GameSettings';
 
 const HomePage = ({ onIsGameSet, onGamePlayerData }) => {

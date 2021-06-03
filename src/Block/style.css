@@ -1,6 +1,6 @@
 .block {
   background-color: #f5ebe0;
-  margin: 0 auto 1rem auto;
+  margin: 2rem auto 1rem auto;
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -24,5 +24,6 @@
 @media screen and (min-width: 768px) {
   .block {
     width: 70%;
+    margin-top: 0;
   }
 }

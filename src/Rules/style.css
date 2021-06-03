@@ -9,15 +9,16 @@
 
 .rules-card-title {
   text-align: center;
+  margin-bottom: 0;
 }
 
 .rules-structure {
-  padding-inline-start: 1.5rem;
+  padding-inline-start: 1.2rem;
   text-align: start;
 }
 
 .rules-structure__item {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .rules-card:last-child {

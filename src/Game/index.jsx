@@ -31,6 +31,7 @@ const Game = ({ gamePlayerData, onUpdateGamePlayerData, onShowGameOver }) => {
   const [showRules, setShowRules] = useState(false);
   const [showTranslateCard, setShowTranslateCard] = useState(false);
   const [showWordLevel, setShowWordLevel] = useState(false);
+  const [winner, setWinner] = useState();
 
   const handleShowRules = () => {
     setShowRules(!showRules);
@@ -99,10 +100,11 @@ const Game = ({ gamePlayerData, onUpdateGamePlayerData, onShowGameOver }) => {
       score: currentPlayer.score + number,
     };
     onUpdateGamePlayerData(newPlayerData);
-    if (newPlayerData.score >= 6) {
+    if (newPlayerData.score >= 60) {
       handleShowGameOver();
       console.log('hra je ukončena');
       console.log(newPlayerData);
+      setWinner(newPlayerData.name);
     }
   };
 
@@ -129,6 +131,7 @@ const Game = ({ gamePlayerData, onUpdateGamePlayerData, onShowGameOver }) => {
         showTranslateCard={showTranslateCard}
         onShowTranslateCard={handleShowTranslateCard}
         showWordLevel={showWordLevel}
+        winner={winner}
       />
 
       <div className="score-board">
