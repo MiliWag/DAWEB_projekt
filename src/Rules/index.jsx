@@ -10,8 +10,8 @@ const Rules = ({ onShowPopup }) => {
         <h2 className="rules-card-title">Pravidla</h2>
         <ul className="rules-structure">
           <li className="rules-structure__item">
-            Hra je určena pro jednoho až čtyři hráče. Každý hráč si zvolí své
-            jméno a barvu.
+            Hra je určena pro dva až čtyři hráče. Každý hráč si zvolí své jméno
+            a barvu.
           </li>
           <li className="rules-structure__item">
             Kdo je na řadě určuje Slovíčkomat – zobrazuje se v poli „Hraje“.
