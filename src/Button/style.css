@@ -99,6 +99,11 @@ button {
 }
 
 /*---------------------------------------- popup windows buttons --------------------------------------*/
+.medium {
+  width: 8rem;
+  text-transform: none;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
 
 .small {
   width: 8rem;

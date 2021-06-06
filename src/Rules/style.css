@@ -9,7 +9,7 @@
 
 .rules-card-title {
   text-align: center;
-  margin-bottom: 0;
+  margin: 0.5rem 0 0 0;
 }
 
 .rules-structure {
@@ -21,12 +21,10 @@
   margin-bottom: 0.5rem;
 }
 
-.rules-card:last-child {
-  align-items: center;
+.rules-structure__item:last-child {
+  margin-bottom: 0;
 }
 
-.rules-buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.rules-card:last-child {
+  align-items: center;
 }

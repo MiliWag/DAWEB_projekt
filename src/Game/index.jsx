@@ -88,7 +88,11 @@ const Game = ({ gamePlayerData, onUpdateGamePlayerData, onShowGameOver }) => {
     const playerObject = gamePlayerData.filter((item) => {
       return item.id === playerNumber;
     });
-    setCurrentPlayer(playerObject[0]);
+    if (numberOfPlayers >= 2) {
+      setCurrentPlayer(playerObject[0]);
+    } else {
+      setCurrentPlayer(currentPlayer);
+    }
   };
 
   const updatePlayerScore = (number) => {

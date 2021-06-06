@@ -48,20 +48,23 @@
 
 .player__progress {
   width: calc(100% / 3);
-  color: #10497f;
-  height: 2rem;
 }
 
-@media screen and (min-width: 1000px) {
-  .player__progress {
-    width: 55%;
-  }
+progress[value] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: #1669b6;
+}
 
-  .player__name {
-    width: 20%;
-  }
+progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  height: 0.8rem;
+}
 
-  .player__score {
-    width: 15%;
-  }
+progress[value]::-webkit-progress-value {
+  background-color: #1669b6;
+  border-radius: 2px 0 0 2px;
 }

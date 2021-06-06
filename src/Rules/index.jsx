@@ -37,7 +37,7 @@ const Rules = ({ onShowPopup }) => {
 
         <Button
           onClick={onShowPopup}
-          nameOfClass="button button--primary border"
+          nameOfClass="button button--primary medium"
           textContent="Zpět"
         />
       </div>
