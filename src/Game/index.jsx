@@ -8,6 +8,7 @@ import Tabletop from 'tabletop';
 import WhoPlays from '../WhoPlays/index';
 import ScoreOverview from '../ScoreOverview/index';
 import GameOver from '../GameOver/index';
+import Papa from 'papaparse';
 
 const Game = ({ gamePlayerData, onUpdateGamePlayerData, onShowGameOver }) => {
   const [vocabularyData, setVocabularyData] = useState([]);
@@ -58,12 +59,16 @@ const Game = ({ gamePlayerData, onUpdateGamePlayerData, onShowGameOver }) => {
   };
 
   useEffect(() => {
-    Tabletop.init({
-      key: '1FYTJXxyIAHzPgHTOb3oH4BU-L5zRz4gg5o1y4OhEXaw',
-      simpleSheet: true,
-    })
-      .then((vocabularyData) => setVocabularyData(vocabularyData))
-      .catch((err) => console.warn(err));
+    Papa.parse(
+      'https://docs.google.com/spreadsheets/d/1FYTJXxyIAHzPgHTOb3oH4BU-L5zRz4gg5o1y4OhEXaw/pub?output=csv',
+      {
+        download: true,
+        header: true,
+        complete: (vocabularyData) => {
+          setVocabularyData(vocabularyData.data);
+        },
+      },
+    );
   }, []);
   const getWordsByLevel = (level) => {
     return vocabularyData.filter((word) => word.level === level);

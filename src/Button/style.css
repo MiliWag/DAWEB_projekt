@@ -84,6 +84,7 @@ button {
   padding: 1rem;
   border-radius: 15px;
   border: solid 2px white;
+  box-shadow: 5px 10px 15px black;
 }
 
 .info-rules:hover {

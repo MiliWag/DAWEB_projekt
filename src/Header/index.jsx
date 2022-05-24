@@ -59,11 +59,9 @@ const Header = ({
           )}
         </PopupWindow>
 
-        <Button
-          onClick={onShowRules}
-          nameOfClass="info-rules"
-          textContent="Pravidla"
-        />
+        <button className="info-rules" onClick={onShowRules}>
+          Pravidla
+        </button>
       </header>
       <>
         <div className="choose-word-difficulty">
